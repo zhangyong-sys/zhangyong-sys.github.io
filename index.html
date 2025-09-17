@@ -7,25 +7,25 @@
 		<meta content="width=device-width, initial-scale=1" name="viewport" data-next-head="">
 		<link href="/manifest.json" rel="manifest" type="application/manifest+json" data-next-head="">
 		<script type="text/javascript" src="static/js/page-props-927334.js"></script>
-		<!-- <link href="/icons/acuvue/16x16.png" rel="icon" sizes="16x16" type="image/png" data-next-head="">
-		<link href="/icons/acuvue/32x32.png" rel="icon" sizes="32x32" type="image/png" data-next-head="">
-		<link href="/icons/acuvue/192x192.png" rel="icon" sizes="192x192" type="image/png" data-next-head="">
-		<link href="/icons/acuvue/512x512.png" rel="icon" sizes="512x512" type="image/png" data-next-head="">
-		<link href="/icons/acuvue/apple-touch-icon.png" rel="apple-touch-icon" type="image/png" data-next-head=""> -->
-		<link href="https://www.acuvue.com/zh-hk/" rel="canonical" data-next-head="">
+		<!-- <link href="/icons//16x16.png" rel="icon" sizes="16x16" type="image/png" data-next-head="">
+		<link href="/icons//32x32.png" rel="icon" sizes="32x32" type="image/png" data-next-head="">
+		<link href="/icons//192x192.png" rel="icon" sizes="192x192" type="image/png" data-next-head="">
+		<link href="/icons//512x512.png" rel="icon" sizes="512x512" type="image/png" data-next-head="">
+		<link href="/icons//apple-touch-icon.png" rel="apple-touch-icon" type="image/png" data-next-head=""> -->
+		<link href="https://www..com/zh-hk/" rel="canonical" data-next-head="">
 		<!-- <link rel="preload stylesheet" href="static/css/style.CZzV85Om.css" as="style"> -->
 
 		<meta content="阿迩发集团株式会社" property="og:title" data-next-head="">
 		<meta content="" property="og:description" data-next-head="">
-		<meta content="https://www.acuvue.com/logo/acuvue/OpenGraph.png" property="og:image" data-next-head="">
-		<meta content="https://www.acuvue.com/zh-hk/" property="og:url" data-next-head="">
+		<meta content="https://www..com/logo//OpenGraph.png" property="og:image" data-next-head="">
+		<meta content="https://www..com/zh-hk/" property="og:url" data-next-head="">
 		<meta content="website" property="og:type" data-next-head="">
 		<meta content="zh_HK" property="og:locale" data-next-head="">
-		<meta content="ACUVUE" property="og:site_name" data-next-head="">
+		<meta content="" property="og:site_name" data-next-head="">
 		<meta content="阿迩发集团株式会社" name="twitter:title" data-next-head="">
 		<meta content="" name="twitter:description" data-next-head="">
-		<meta content="https://www.acuvue.com/logo/acuvue/TwitterCard.png" name="twitter:image" data-next-head="">
-		<meta content="https://www.acuvue.com/zh-hk/" name="twitter:url" data-next-head="">
+		<meta content="https://www..com/logo//TwitterCard.png" name="twitter:image" data-next-head="">
+		<meta content="https://www..com/zh-hk/" name="twitter:url" data-next-head="">
 		<meta content="summary" name="twitter:card" data-next-head="">
 		<link href="static/css/icon-fonts-25-08-25.css" rel="stylesheet" type="text/css">
 		<link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous">
@@ -1101,6 +1101,36 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
     margin-bottom: 16px;
 }
 
+.swiper-slide {
+  opacity: 0;                  /* 初始状态 */
+  transition: opacity 1s ease; /* transition 必须在初始状态写 */
+
+}
+
+.swiper-slide.active {
+      opacity: 1;
+	  z-index: 1;
+}
+
+.lang-btn {
+	margin: 5px;
+	display: inline-flex;
+	border: 0;
+	padding: 8px;
+	border-radius: 8px;
+	font-size: 16px;
+	background-color: #0000;
+	cursor: pointer;
+}
+.lang-btn:hover {
+    background-color: #178197;
+	color: #FFFFFF;
+}
+
+.lang-choose.active {
+	display: block !important;
+	color: #FFFFFF !important;
+}
 </style></head>
 <body data-pageref="blt24ad2309062a7332" data-contenttype="homepage" data-locale="zh-hk" class="nunito-sans">
 	<div id="__next">
@@ -1117,14 +1147,75 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 
 								<div class="sc-39e33ea1-3 bONhBW">
 									<div class="sc-39e33ea1-4 krnCxo">
-										<div data-test-id="accessibility-icon" tabindex="-1" aria-label="前往我們的無障礙政策。" class="sc-39e33ea1-5 jOkJue">
+										<div  id="langBtn" style="position: relative;"  data-test-id="accessibility-icon" tabindex="-1" aria-label="" class="sc-39e33ea1-5 jOkJue">
 											<a class="sc-4cfe67d8-0 ibQjVD sc-89e4a8ca-2 ixBCu sc-39e33ea1-6 iPRFts" data-analytics-type="link_click" data-test-id="button" href="javascript:void(0)" role="link" tabindex="0" target="_self" title="" variant="tertiary" data-analytics-category="accessibility" data-component-id="button" aria-label="Accessibility button in navigation bar">
 												<label class="sc-c2ede849-2 bQCzI"></label>
 												<div class="sc-89e4a8ca-1 iCiHNx" style="display: flex;align-items: center;">
 													<i class="sc-96e811ea-0 ghKEwI icon utility_accessibility" data-test-id="undefined-icon"></i>&nbsp;
-													<span>中文（简体）</span>
+													<span id="languageDisplay" style="width:100px;">中文（简体）</span>
 												</div>
 											</a>
+											<!--国际化 -->
+											<div id="langMenu" style="position: absolute;background-color: #FFFFFF; user-select: auto; width: 150px;box-shadow:0px 0px 8px rgba(0,0,0,.12);border-radius:2%;
+															display: none; top: 50px;  cursor: auto; z-index: 100;
+															pointer-events: auto;  box-sizing: border-box; flex-shrink: 0;">
+												<ul style="background-color: #fafafa; display: flex; flex-direction: column;">
+													<button class="lang-btn"  value="日本語"
+														aria-selected="true" aria-disabled="false" tabindex="0" id="floating-ui-bgen13-ja-JP"
+														role="option" data-rg-theme="orange" data-rg-mode="dark">
+															<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 bodytext_module_size1__438b4936">
+																日本語
+															</span>
+															<div class="lang-choose" style="margin-inline-start:auto;display: none;">
+																<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 listItem_module_endIcon__4a93b8da bodytext_module_size1__438b4936">
+																	<span class="icon_module_icon__7e6be9b9 icon_module_legacyIcon__7e6be9b9 icon_module_sizeS__7e6be9b9">
+																		<svg style="width: 16px;height: 16px;" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M7.37999 15.23C7.14999 15.23 6.91999 15.15 6.73999 15L0.73999 10L2.01999 8.46001L7.07999 12.68L13.5 0.76001L15.26 1.71001L8.25999 14.71C8.11999 14.97 7.85999 15.16 7.56999 15.22C7.50999 15.23 7.43999 15.24 7.37999 15.24V15.23Z"
+																			data-fill="true">
+																			</path>
+																		</svg>
+																	</span>
+																</span>
+															</div>
+													</button>
+													<button  class="lang-btn"  value="中文 (简体)" aria-selected="false" aria-disabled="false" tabindex="-1" id="floating-ui-bgen13-zh-CN"
+														class="listItem_module_listItem__4a93b8da listItem_module_button__4a93b8da"
+														role="option" data-rg-theme="orange" data-rg-mode="light">
+														<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 bodytext_module_size1__438b4936">
+															中文 (简体)
+														</span>
+														<div class="lang-choose active" style="margin-inline-start:auto;display: none;">
+																<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 listItem_module_endIcon__4a93b8da bodytext_module_size1__438b4936">
+																	<span class="icon_module_icon__7e6be9b9 icon_module_legacyIcon__7e6be9b9 icon_module_sizeS__7e6be9b9">
+																		<svg style="width: 16px;height: 16px;" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M7.37999 15.23C7.14999 15.23 6.91999 15.15 6.73999 15L0.73999 10L2.01999 8.46001L7.07999 12.68L13.5 0.76001L15.26 1.71001L8.25999 14.71C8.11999 14.97 7.85999 15.16 7.56999 15.22C7.50999 15.23 7.43999 15.24 7.37999 15.24V15.23Z"
+																			data-fill="true">
+																			</path>
+																		</svg>
+																	</span>
+																</span>
+														</div>
+													</button>
+													<button  class="lang-btn" value="English" aria-selected="false" aria-disabled="false" tabindex="-1" id="floating-ui-bgen13-zh-CN"
+														class="listItem_module_listItem__4a93b8da listItem_module_button__4a93b8da"
+														role="option" data-rg-theme="orange" data-rg-mode="light">
+														<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 bodytext_module_size1__438b4936">
+															English
+														</span>
+														<div class="lang-choose" style="margin-inline-start:auto;display: none;">
+																<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 listItem_module_endIcon__4a93b8da bodytext_module_size1__438b4936">
+																	<span class="icon_module_icon__7e6be9b9 icon_module_legacyIcon__7e6be9b9 icon_module_sizeS__7e6be9b9">
+																		<svg style="width: 16px;height: 16px;" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M7.37999 15.23C7.14999 15.23 6.91999 15.15 6.73999 15L0.73999 10L2.01999 8.46001L7.07999 12.68L13.5 0.76001L15.26 1.71001L8.25999 14.71C8.11999 14.97 7.85999 15.16 7.56999 15.22C7.50999 15.23 7.43999 15.24 7.37999 15.24V15.23Z"
+																			data-fill="true">
+																			</path>
+																		</svg>
+																	</span>
+																</span>
+														</div>
+													</button>
+												</ul>
+											</div>
 										</div>
 										<!-- <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="vt-locales-btn-icon" data-v-849d921a="">
 											<path d="M0 0h24v24H0z" fill="none"></path><path d=" M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z " class="css-c4d79v"></path>
@@ -1155,7 +1246,7 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 									<div aria-hidden="true" style="top:0;left:0;width:100%;height:0px;opacity:0;transform:translateX(-100%);z-index:1;position:fixed;visibility:hidden">
 										<div data-test-id="navigation-menu" class="sc-d65f97c1-0 eLYpGY">
 											<div data-test-id="navigation-menu-header" class="sc-d65f97c1-1 XKrxI">
-												<img src="static/picture/Acuvue_Brand_Logo_Dark.svg" alt="ACUVUE" title="ACUVUE" width="132" height="24" loading="lazy" sizes="(max-width: 1024px) 132px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blt0b481bf7215decd0/647875059ee73601f8b3eb95/Acuvue_Brand_Logo_Dark.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=132&amp;height=24 1024w" data-analytics-type="icon_click" data-test-id="navigation-menu-logo" class="sc-83289136-1 kDvmdk sc-d65f97c1-2 dEvSjM">
+												<img src="static/picture/_Brand_Logo_Dark.svg" alt="" title="" width="132" height="24" loading="lazy" sizes="(max-width: 1024px) 132px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blt0b481bf7215decd0/647875059ee73601f8b3eb95/_Brand_Logo_Dark.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=132&amp;height=24 1024w" data-analytics-type="icon_click" data-test-id="navigation-menu-logo" class="sc-83289136-1 kDvmdk sc-d65f97c1-2 dEvSjM">
 												<button class="sc-4cfe67d8-1 gFhIoG sc-89e4a8ca-2 ixBCu" data-test-id="close-burger-menu" role="button" tabindex="0" title="" variant="tertiary" data-component-id="close-burger-menu" type="button" aria-label="Close hamburger menu button">
 													<label class="sc-c2ede849-2 bQCzI"></label>
 													<div class="sc-89e4a8ca-1 iCiHNx">
@@ -1220,7 +1311,7 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 								</div>
 								<div class="sc-52bfa9c7-4 lfBCLr">
 									<a data-analytics-type="logo" data-test-id="company-logo_nav-link" href="javascript:void(0)" tabindex="0" target="_blank">
-										<!-- <img src="static/picture/Acuvue_Brand_Logo_Light.svg" alt="ACUVUE" title="ACUVUE" width="154" height="28" loading="lazy" sizes="(max-width: 768px) 132px, (max-width: 1200px) 154px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/Acuvue_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=132&amp;height=24 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/Acuvue_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=154&amp;height=28 1200w" class="sc-83289136-1 kDvmdk sc-baeee1d9-0 hHQvYm"> -->
+										<!-- <img src="static/picture/_Brand_Logo_Light.svg" alt="" title="" width="154" height="28" loading="lazy" sizes="(max-width: 768px) 132px, (max-width: 1200px) 154px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=132&amp;height=24 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=154&amp;height=28 1200w" class="sc-83289136-1 kDvmdk sc-baeee1d9-0 hHQvYm"> -->
 										<img src="static/image2/i_logo.png" alt="aaaa" title="bbbbb" width="154" height="28" loading="lazy" 
 										onclick="window.location.href='index.html'" 
 										sizes="(max-width: 768px) 132px, (max-width: 1200px) 154px" srcset="" class="sc-83289136-1 kDvmdk sc-baeee1d9-0 hHQvYm">
@@ -1298,8 +1389,8 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 				<div data-test-id="banner-container" class="sc-31130771-2 kNuoNd">
 					<div class="sc-b5b1e058-3 gtrFpQ inner sc-31130771-1 fUIjeD">
 						<div class="swiper" data-control="inner">
-							<div class="swiper-wrapper">
-								<div id="slide1" class="swiper-slide">
+							<div id="swiper-wrapper" class="swiper-wrapper">
+								<div class="swiper-slide active">
 									<div class="sc-31130771-3 llsopO">
 										<div class="sc-ca09bf68-0 ldWA-DC sc-31130771-4 VBnrH">
 											<div data-test-id="title-banner" class="sc-31130771-5 lovoat">
@@ -1334,8 +1425,8 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 												<div class="sc-31130771-9 kMSOZq">
 													<div class="sc-31130771-10 czTubz">
 														<!--TODO 首页滚动图片-->
-														<!-- <img src="static/picture/ACUVUE_-_O1D_&_MAX_POSM_-_LensCrafters_eBanner_Top_6.png" alt="亮視點限時驗配組合&lt;br&gt;ACUVUE OASYS系列" title="亮視點限時驗配組合ACUVUE OASYS系列" height="580" loading="eager" sizes="" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/bltb2ca10ac5caa2d5a/68a6eec03e4408f809dc1a28/ACUVUE_-_O1D_&amp;_MAX_POSM_-_LensCrafters_eBanner_Top_6.png?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;height=375 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/bltb2ca10ac5caa2d5a/68a6eec03e4408f809dc1a28/ACUVUE_-_O1D_&amp;_MAX_POSM_-_LensCrafters_eBanner_Top_6.png?branch=prod_aliasamp;fit=crop&amp;format=webp&amp;quality=80&amp;height=580 1024w" class="sc-83289136-1 kDvmdk"> -->
-														<img src="static/image2/product_img01.png" alt="亮視點限時驗配組合&lt;br&gt;ACUVUE OASYS系列" title="亮視點限時驗配組合ACUVUE OASYS系列" height="580" loading="eager" sizes="" srcset="">
+												
+														<img src="static/image2/product_img01.png" alt="亮視點限時驗配組合&lt;br&gt; OASYS系列" title="亮視點限時驗配組合 OASYS系列" height="580" loading="eager" sizes="" srcset="">
 													</div>
 												</div>
 											</div>
@@ -1345,7 +1436,142 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 										</div>
 									</div>
 								</div>
-								<div id="slide2" class="swiper-slide">
+								<div class="swiper-slide">
+									<div class="sc-31130771-3 llsopO">
+										<div class="sc-ca09bf68-0 ldWA-DC sc-31130771-4 VBnrH">
+											<div data-test-id="title-banner" class="sc-31130771-5 lovoat">
+												<div class="sc-31130771-6 ktJBYN">
+													<div class="sc-31130771-7 iblXlC">
+														<div class="sc-31130771-8 gSEMYU">
+															<h1 class="sc-894dfc76-0 imSZvp sc-31130771-12 iyoZva" data-test-id="title-banner-headline-text">
+																<span>培克能<sup style="line-height: 0">®</sup>
+																	<br>角膜接触镜护理液</span>
+															</h1>
+															<div class="sc-69c891d5-0 ffIIyQ sc-31130771-13 sc-31130771-14 dxTPth dQdnnQ" data-test-id="rich-text">
+																<div class="sc-894dfc76-4 bDzjyt">
+																	<span>
+																		<p>清洗、除蛋白及保存三合一，使用方便</p>
+																		<p>具有超强洗净能力</p>
+																		<p>亲水性高，洗净后的镜片配戴更加舒适</p>
+																	</span>
+																</div>
+															</div>
+															<div class="sc-31130771-15 BGFlV">
+																<button class="sc-4cfe67d8-1 bCXSXo sc-31130771-16 fnftnP" data-test-id="title-banner_button" role="button" tabindex="0" variant="primary" data-component-id="title-banner_button" type="button" aria-label="了解更多">
+																	<label class="sc-c2ede849-2 bQCzI">了解更多</label>
+																	<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="sc-3eb0bf3f-0 gQhztA sc-c2ede849-0 iAkwTl" aria-hidden="true" data-test-id="title-banner_button-icon">
+																		<path fill-rule="evenodd" clip-rule="evenodd" d="M4 7.99999C4 7.63181 4.31222 7.33333 4.69737 7.33333H10.636C11.0211 7.33333 11.3333 7.63181 11.3333 7.99999C11.3333 8.36818 11.0211 8.66666 10.636 8.66666H4.69737C4.31222 8.66666 4 8.36818 4 7.99999Z" fill="#0A5F72"></path>
+																		<path fill-rule="evenodd" clip-rule="evenodd" d="M8.55402 4.17114C8.82769 3.92484 9.24921 3.94702 9.49552 4.22069L12.4955 7.55401C12.7237 7.80755 12.7237 8.19242 12.4955 8.44596L9.49561 11.7793C9.24931 12.053 8.82778 12.0752 8.55411 11.8289C8.28043 11.5826 8.25824 11.161 8.50454 10.8874L11.1031 8L8.50446 5.11265C8.25816 4.83898 8.28034 4.41745 8.55402 4.17114Z" fill="#0A5F72"></path>
+																	</svg>
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sc-31130771-9 kMSOZq">
+													<div class="sc-31130771-10 czTubz">
+														<!--TODO 首页滚动图片-->
+												
+														<img src="static/image2/product2.jpg" alt="亮視點限時驗配組合&lt;br&gt; OASYS系列" title="亮視點限時驗配組合 OASYS系列" height="580" loading="eager" sizes="" srcset="">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sc-31130771-18 gGnxAY">
+											<div data-test-id="divider" class="sc-d8c8e2ad-0 cNYiuT"></div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="sc-31130771-3 llsopO">
+										<div class="sc-ca09bf68-0 ldWA-DC sc-31130771-4 VBnrH">
+											<div data-test-id="title-banner" class="sc-31130771-5 lovoat">
+												<div class="sc-31130771-6 ktJBYN">
+													<div class="sc-31130771-7 iblXlC">
+														<div class="sc-31130771-8 gSEMYU">
+															<h1 class="sc-894dfc76-0 imSZvp sc-31130771-12 iyoZva" data-test-id="title-banner-headline-text">
+																<span>双联盒
+																	<br>阿迩发隐形眼镜盛放盒</span>
+															</h1>
+															<div class="sc-69c891d5-0 ffIIyQ sc-31130771-13 sc-31130771-14 dxTPth dQdnnQ" data-test-id="rich-text">
+																<div class="sc-894dfc76-4 bDzjyt">
+																	<span>
+																		<p>适用于隐形眼镜（含硬镜和软镜）配戴者</p>
+																	</span>
+																</div>
+															</div>
+															<div class="sc-31130771-15 BGFlV">
+																<button class="sc-4cfe67d8-1 bCXSXo sc-31130771-16 fnftnP" data-test-id="title-banner_button" role="button" tabindex="0" variant="primary" data-component-id="title-banner_button" type="button" aria-label="了解更多">
+																	<label class="sc-c2ede849-2 bQCzI">了解更多</label>
+																	<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="sc-3eb0bf3f-0 gQhztA sc-c2ede849-0 iAkwTl" aria-hidden="true" data-test-id="title-banner_button-icon">
+																		<path fill-rule="evenodd" clip-rule="evenodd" d="M4 7.99999C4 7.63181 4.31222 7.33333 4.69737 7.33333H10.636C11.0211 7.33333 11.3333 7.63181 11.3333 7.99999C11.3333 8.36818 11.0211 8.66666 10.636 8.66666H4.69737C4.31222 8.66666 4 8.36818 4 7.99999Z" fill="#0A5F72"></path>
+																		<path fill-rule="evenodd" clip-rule="evenodd" d="M8.55402 4.17114C8.82769 3.92484 9.24921 3.94702 9.49552 4.22069L12.4955 7.55401C12.7237 7.80755 12.7237 8.19242 12.4955 8.44596L9.49561 11.7793C9.24931 12.053 8.82778 12.0752 8.55411 11.8289C8.28043 11.5826 8.25824 11.161 8.50454 10.8874L11.1031 8L8.50446 5.11265C8.25816 4.83898 8.28034 4.41745 8.55402 4.17114Z" fill="#0A5F72"></path>
+																	</svg>
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sc-31130771-9 kMSOZq">
+													<div class="sc-31130771-10 czTubz">
+														<!--TODO 首页滚动图片-->
+												
+														<img src="static/image2/product3.jpg" alt="亮視點限時驗配組合&lt;br&gt; OASYS系列" title="亮視點限時驗配組合 OASYS系列" height="580" loading="eager" sizes="" srcset="">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sc-31130771-18 gGnxAY">
+											<div data-test-id="divider" class="sc-d8c8e2ad-0 cNYiuT"></div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="sc-31130771-3 llsopO">
+										<div class="sc-ca09bf68-0 ldWA-DC sc-31130771-4 VBnrH">
+											<div data-test-id="title-banner" class="sc-31130771-5 lovoat">
+												<div class="sc-31130771-6 ktJBYN">
+													<div class="sc-31130771-7 iblXlC">
+														<div class="sc-31130771-8 gSEMYU">
+															<h1 class="sc-894dfc76-0 imSZvp sc-31130771-12 iyoZva" data-test-id="title-banner-headline-text">
+																<span>DMV吸棒<br/>硬性隐形眼镜
+																	<br>全硅胶吸棒</span>
+															</h1>
+															<div class="sc-69c891d5-0 ffIIyQ sc-31130771-13 sc-31130771-14 dxTPth dQdnnQ" data-test-id="rich-text">
+																<div class="sc-894dfc76-4 bDzjyt">
+																	<span>
+																		<p>全硅胶，一体成型</p>
+																		<p>抗腐蚀、柔软有弹性、吸力适当、精致小巧</p>
+																	</span>
+																</div>
+															</div>
+															<div class="sc-31130771-15 BGFlV">
+																<button class="sc-4cfe67d8-1 bCXSXo sc-31130771-16 fnftnP" data-test-id="title-banner_button" role="button" tabindex="0" variant="primary" data-component-id="title-banner_button" type="button" aria-label="了解更多">
+																	<label class="sc-c2ede849-2 bQCzI">了解更多</label>
+																	<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="sc-3eb0bf3f-0 gQhztA sc-c2ede849-0 iAkwTl" aria-hidden="true" data-test-id="title-banner_button-icon">
+																		<path fill-rule="evenodd" clip-rule="evenodd" d="M4 7.99999C4 7.63181 4.31222 7.33333 4.69737 7.33333H10.636C11.0211 7.33333 11.3333 7.63181 11.3333 7.99999C11.3333 8.36818 11.0211 8.66666 10.636 8.66666H4.69737C4.31222 8.66666 4 8.36818 4 7.99999Z" fill="#0A5F72"></path>
+																		<path fill-rule="evenodd" clip-rule="evenodd" d="M8.55402 4.17114C8.82769 3.92484 9.24921 3.94702 9.49552 4.22069L12.4955 7.55401C12.7237 7.80755 12.7237 8.19242 12.4955 8.44596L9.49561 11.7793C9.24931 12.053 8.82778 12.0752 8.55411 11.8289C8.28043 11.5826 8.25824 11.161 8.50454 10.8874L11.1031 8L8.50446 5.11265C8.25816 4.83898 8.28034 4.41745 8.55402 4.17114Z" fill="#0A5F72"></path>
+																	</svg>
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sc-31130771-9 kMSOZq">
+													<div class="sc-31130771-10 czTubz">
+														<!--TODO 首页滚动图片-->
+												
+														<img src="static/image2/product4.jpg" alt="亮視點限時驗配組合&lt;br&gt; OASYS系列" title="亮視點限時驗配組合 OASYS系列" height="580" loading="eager" sizes="" srcset="">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sc-31130771-18 gGnxAY">
+											<div data-test-id="divider" class="sc-d8c8e2ad-0 cNYiuT"></div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
 									<div class="sc-31130771-3 jmQnER">
 										<div class="sc-ca09bf68-0 ldWA-DC sc-31130771-4 VBnrH">
 											<div data-test-id="title-banner" class="sc-31130771-5 fzscgg">
@@ -1388,7 +1614,7 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 												</div>
 												<div class="sc-31130771-9 kMSOZq">
 													<div class="sc-31130771-10 clinQk">
-														<img src="static/picture/JNJ-1172_website_banner_1080x1080_n01.png" alt="A lady with white top, wearing ACUVUE contact lenses" title="ACUVUE配CON新手包: 15天試戴活動" height="580" loading="lazy" sizes="" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blt716582d031a555e8/686b855a03043ff055fc016e/JNJ-1172_website_banner_1080x1080_n01.png?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;height=375 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blt716582d031a555e8/686b855a03043ff055fc016e/JNJ-1172_website_banner_1080x1080_n01.png?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;height=580 1024w" class="sc-83289136-1 kDvmdk">
+														<img src="static/picture/JNJ-1172_website_banner_1080x1080_n01.png" alt="A lady with white top, wearing  contact lenses" title="配CON新手包: 15天試戴活動" height="580" loading="lazy" sizes="" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blt716582d031a555e8/686b855a03043ff055fc016e/JNJ-1172_website_banner_1080x1080_n01.png?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;height=375 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blt716582d031a555e8/686b855a03043ff055fc016e/JNJ-1172_website_banner_1080x1080_n01.png?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;height=580 1024w" class="sc-83289136-1 kDvmdk">
 													</div>
 												</div>
 											</div>
@@ -1398,7 +1624,8 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 										</div>
 									</div>
 								</div>
-								<div class="swiper-slide">
+
+								<!-- <div class="swiper-slide">
 									<div class="sc-31130771-3 iKuqtu">
 										<div class="sc-ca09bf68-0 ldWA-DC sc-31130771-4 VBnrH">
 											<div data-test-id="title-banner" class="sc-31130771-5 fzscgg">
@@ -1426,7 +1653,7 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 																	</svg>
 																</button>
 															</div>
-															<img src="static/picture/Acuvue_Brand_Logo_Light.svg" alt="ACUVUE" title="ACUVUE" width="330" height="60" loading="eager" sizes="(max-width: 768px) 176px, (max-width: 1024px) 330px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/Acuvue_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=176&amp;height=32 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/Acuvue_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=330&amp;height=60 1024w" class="sc-83289136-1 kDvmdk sc-31130771-17 edckwM">
+															<img src="static/picture/_Brand_Logo_Light.svg" alt="" title="" width="330" height="60" loading="eager" sizes="(max-width: 768px) 176px, (max-width: 1024px) 330px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=176&amp;height=32 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=330&amp;height=60 1024w" class="sc-83289136-1 kDvmdk sc-31130771-17 edckwM">
 														</div>
 													</div>
 												</div>
@@ -1447,14 +1674,14 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 													<div class="sc-31130771-7 iblXlC">
 														<div class="sc-31130771-8 gSEMYU">
 															<h2 class="sc-894dfc76-1 gRYvaF sc-31130771-12 bqkdcB" data-test-id="title-banner-headline-text">
-																<span>立即註冊成為MyACUVUE<sup style="line-height: 0">®</sup>會員</span>
+																<span>立即註冊成為My<sup style="line-height: 0">®</sup>會員</span>
 															</h2>
 															<div class="sc-69c891d5-0 ffIIyQ sc-31130771-13 sc-31130771-14 nfUKR dQdnnQ" data-test-id="rich-text">
 																<div class="sc-894dfc76-4 bDzjyt">
 																	<span>
 																		<p>
 																			<span>只需簡單幾個步驟，註冊成為</span>
-																			<span>MyACUVUE</span>
+																			<span>My</span>
 																			<span>
 																				<sup style="line-height: 0">®</sup>
 																			</span>
@@ -1474,7 +1701,7 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 																	</svg>
 																</button>
 															</div>
-															<img src="static/picture/Acuvue_Brand_Logo_Light.svg" alt="ACUVUE" title="ACUVUE" width="330" height="60" loading="eager" sizes="(max-width: 768px) 176px, (max-width: 1024px) 330px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/Acuvue_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=176&amp;height=32 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/Acuvue_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=330&amp;height=60 1024w" class="sc-83289136-1 kDvmdk sc-31130771-17 edckwM">
+															<img src="static/picture/_Brand_Logo_Light.svg" alt="" title="" width="330" height="60" loading="eager" sizes="(max-width: 768px) 176px, (max-width: 1024px) 330px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=176&amp;height=32 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=330&amp;height=60 1024w" class="sc-83289136-1 kDvmdk sc-31130771-17 edckwM">
 														</div>
 													</div>
 												</div>
@@ -1500,21 +1727,21 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 															<div class="sc-69c891d5-0 ffIIyQ sc-31130771-13 sc-31130771-14 fkMYEJ dQdnnQ" data-test-id="rich-text">
 																<div class="sc-894dfc76-4 bDzjyt">
 																	<span>
-																		<span>全球No.1^最受眼科視光師信賴品牌ACUVUE<sup style="line-height: 0">®</sup>設計出可迎合不同需求的隱形眼鏡，適合近視、遠視、散光、老花等不同的視力狀況，亦有各式美瞳</span>
+																		<span>全球No.1^最受眼科視光師信賴品牌<sup style="line-height: 0">®</sup>設計出可迎合不同需求的隱形眼鏡，適合近視、遠視、散光、老花等不同的視力狀況，亦有各式美瞳</span>
 																		<p></p>
 																	</span>
 																</div>
 															</div>
 															<div class="sc-31130771-15 BGFlV">
-																<button class="sc-4cfe67d8-1 hcHREr sc-31130771-16 fnftnP" data-test-id="title-banner_button" role="button" tabindex="0" variant="secondary" data-component-id="title-banner_button" type="button" aria-label="查看ACUVUE®產品">
-																	<label class="sc-c2ede849-2 bQCzI">查看ACUVUE<sup style="line-height: 0">®</sup>產品</label>
+																<button class="sc-4cfe67d8-1 hcHREr sc-31130771-16 fnftnP" data-test-id="title-banner_button" role="button" tabindex="0" variant="secondary" data-component-id="title-banner_button" type="button" aria-label="查看產品">
+																	<label class="sc-c2ede849-2 bQCzI">查看<sup style="line-height: 0">®</sup>產品</label>
 																	<svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="sc-3eb0bf3f-0 gQhztA sc-c2ede849-0 iAkwTl" aria-hidden="true" data-test-id="title-banner_button-icon">
 																		<path fill-rule="evenodd" clip-rule="evenodd" d="M4 7.99999C4 7.63181 4.31222 7.33333 4.69737 7.33333H10.636C11.0211 7.33333 11.3333 7.63181 11.3333 7.99999C11.3333 8.36818 11.0211 8.66666 10.636 8.66666H4.69737C4.31222 8.66666 4 8.36818 4 7.99999Z" fill="#0A5F72"></path>
 																		<path fill-rule="evenodd" clip-rule="evenodd" d="M8.55402 4.17114C8.82769 3.92484 9.24921 3.94702 9.49552 4.22069L12.4955 7.55401C12.7237 7.80755 12.7237 8.19242 12.4955 8.44596L9.49561 11.7793C9.24931 12.053 8.82778 12.0752 8.55411 11.8289C8.28043 11.5826 8.25824 11.161 8.50454 10.8874L11.1031 8L8.50446 5.11265C8.25816 4.83898 8.28034 4.41745 8.55402 4.17114Z" fill="#0A5F72"></path>
 																	</svg>
 																</button>
 															</div>
-															<img src="static/picture/Acuvue_Brand_Logo_Light.svg" alt="ACUVUE" title="ACUVUE" width="330" height="60" loading="eager" sizes="(max-width: 768px) 176px, (max-width: 1024px) 330px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/Acuvue_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=176&amp;height=32 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/Acuvue_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=330&amp;height=60 1024w" class="sc-83289136-1 kDvmdk sc-31130771-17 edckwM">
+															<img src="static/picture/_Brand_Logo_Light.svg" alt="" title="" width="330" height="60" loading="eager" sizes="(max-width: 768px) 176px, (max-width: 1024px) 330px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=176&amp;height=32 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blteb3aa8731a48a55d/647875052afaa76149713a13/_Brand_Logo_Light.svg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=330&amp;height=60 1024w" class="sc-83289136-1 kDvmdk sc-31130771-17 edckwM">
 														</div>
 													</div>
 												</div>
@@ -1526,15 +1753,11 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<div class="sc-b5b1e058-0 dEjeUE">
 								<!-- <div class="sc-b5b1e058-1 bjZddW swiper-pagination"></div> -->
 								<button class="sc-4cfe67d8-1 gFhIoG sc-89e4a8ca-2 ixBCu sc-a8476091-0 iinpjt swiper-button-prev"
-									onclick="document.getElementById('slide1').style = 'width: 1897px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;';
-											document.getElementById('slide2').style = 'width: 1897px; opacity: 0; transform: translate3d(-1897px, 0px, 0px); transition-duration: 0ms;';
-											document.querySelector('#picture1').className ='swiper-pagination-bullet swiper-pagination-bullet-active';
-											document.querySelector('#picture2').className ='swiper-pagination-bullet';"
 									data-test-id="swiper-button-prev" role="button" tabindex="0" title="" variant="tertiary" data-component-id="swiper-button-prev" type="button" aria-label="Button arrow">
 									<label class="sc-c2ede849-2 bQCzI"></label>
 									<div class="sc-89e4a8ca-0 fcLiBA">
@@ -1545,9 +1768,6 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 									</div>
 								</button>
 								<button class="sc-4cfe67d8-1 gFhIoG sc-89e4a8ca-2 ixBCu sc-a8476091-0 iinpjt swiper-button-next" data-test-id="swiper-button-next" 
-									onclick="document.getElementById('slide2').style = 'width: 1897px; opacity: 1; transform: translate3d(-1897px, 0px, 0px); transition-duration: 0ms;' 
-											document.querySelector('#picture1').className ='swiper-pagination-bullet';
-											document.querySelector('#picture2').className ='swiper-pagination-bullet swiper-pagination-bullet-active';"
 									role="button" tabindex="0" title="" variant="tertiary" data-component-id="swiper-button-next" type="button" aria-label="Button arrow">
 									<label class="sc-c2ede849-2 bQCzI"></label>
 									<div class="sc-89e4a8ca-0 fcLiBA">
@@ -1736,8 +1956,8 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 									</div>
 									<div data-test-id="big-content-block-container-media" mediacontainersize="big" class="sc-1c52260f-3 dzYWKB">
 										<div mediacontainersize="big" class="sc-1c52260f-4 gVzQwA">
-											<!-- <img src="static/picture/ACUVUE_OASYS_MAX_1-Day.jpg" alt="ACUVUE® OASYS MAX 1-Day" title="ACUVUE® OASYS MAX 1-Day" width="624" height="351" loading="lazy" sizes="(max-width: 768px) 368px, (max-width: 1024px) 572px, (max-width: 1200px) 624px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blta5856d5e7b3272df/6698c77f35a68efaf66c05c6/ACUVUE_OASYS_MAX_1-Day.jpg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=368&amp;height=207 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blta5856d5e7b3272df/6698c77f35a68efaf66c05c6/ACUVUE_OASYS_MAX_1-Day.jpg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=572&amp;height=322 1024w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blta5856d5e7b3272df/6698c77f35a68efaf66c05c6/ACUVUE_OASYS_MAX_1-Day.jpg?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=624&amp;height=351 1200w" data-test-id="big-content-block-image" class="sc-83289136-1 kDvmdk sc-1c52260f-5 bNyhkg"> -->
-											<img src="static/image2/p_slider_04_pc.png" alt="ACUVUE® OASYS MAX 1-Day" title="ACUVUE® OASYS MAX 1-Day" width="624" height="351" loading="lazy" sizes="(max-width: 768px) 368px, (max-width: 1024px) 572px, (max-width: 1200px) 624px" srcset="">
+											
+											<img src="static/image2/p_slider_04_pc.png" alt=" OASYS MAX 1-Day" title=" OASYS MAX 1-Day" width="624" height="351" loading="lazy" sizes="(max-width: 768px) 368px, (max-width: 1024px) 572px, (max-width: 1200px) 624px" srcset="">
 										</div>
 									</div>
 									<div mediacontainersize="big" class="sc-1c52260f-6 glQJVJ">
@@ -1791,34 +2011,7 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 						</div>
 					</div>
 				</div>
-				<!-- <div class="sc-dc132944-0 dPuOZd">
-					<div class="sc-ca09bf68-0 ldWA-DC">
-						<div data-test-id="promo-inline-banner-container" class="sc-781428b-0 cqfFHu">
-							<div class="sc-781428b-1 hmbbEf">
-								<div data-test-id="promo-inline-banner-image" class="sc-781428b-2 bZvpzG">
-									<img src="static/picture/iphone_Hand.png" alt="MyACUVUE® 獎賞計劃" title="MyACUVUE® 獎賞計劃" width="375" height="375" loading="lazy" sizes="(max-width: 768px) 257px, (max-width: 1200px) 375px" srcset="https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blt55a2f1b760ccfc60/667945ab46a0370a07a2c6c9/iphone_Hand.png?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=257&amp;height=257 768w, https://images.contentstack.io/v3/assets/blt541542d4b6d9d1cc/blt55a2f1b760ccfc60/667945ab46a0370a07a2c6c9/iphone_Hand.png?branch=prod_alias&amp;fit=crop&amp;format=webp&amp;quality=80&amp;width=375&amp;height=375 1200w" data-test-id="promo-inline-banner-image-MyACUVUE® 獎賞計劃" class="sc-83289136-1 kDvmdk">
-								</div>
-								<div class="sc-781428b-3 bhVIlQ">
-									<h3 class="sc-894dfc76-2 eEMbQq sc-781428b-4 BHvEj" data-test-id="promo-inline-banner-headline-text">
-										<span>MyACUVUE<sup style="line-height: 0">®</sup>獎賞計劃 -
-											<br>為戴CON生活而設</span>
-									</h3>
-									<div data-test-id="promo-inline-banner-body-text" class="sc-69c891d5-0 ffIIyQ">
-										<div class="sc-894dfc76-5 fyuRPN">
-											<span>
-												<span>新</span>登記MyACUVUE<sup style="line-height: 0">®</sup>會員即享5天隱形眼鏡試戴
-											</span>
-										</div>
-									</div>
-								</div>
-								<a class="sc-4cfe67d8-0 jiYTNC sc-781428b-5 iqTegz" data-test-id="promo-inline-banner-cta-button" href="http://app.acuvue.com.hk/phone-registration" role="link" tabindex="0" target="_self" variant="secondary" data-component-id="promo-inline-banner-cta-button" aria-label="立即註冊">
-									<label class="sc-c2ede849-2 bQCzI">立即註冊</label>
-									<i class="sc-96e811ea-0 iIqhRH icon sc-c2ede849-1 bNeyvQ arrow_small_right" data-test-id="promo-inline-banner-cta-button-icon"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div> -->
+			
 				<div class="sc-dc132944-1 khLJRj">
 					<div data-test-id="content-section" id="" class="sc-77fefa32-0 biVOeb">
 						<div id="" class="sc-ca09bf68-0 ldWA-DC">
@@ -2186,45 +2379,6 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 											</div>
 										</div>
 									</div>
-									<!-- <div class="sc-64f2d631-0 bwTSBu">
-										<div data-test-id="card-container" type="related_content" class="sc-a0df35ed-0 kssMaz">
-											<div data-test-id="card-container-icon" type="related_content" class="sc-a0df35ed-12 bLHlLb">
-												<svg viewbox="0 0 72 72" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:72px" class="sc-3eb0bf3f-0 eRsXrc" aria-hidden="true">
-													<path d="M47.77 27.767a.5.5 0 0 1-.5-.466 12.324 12.324 0 0 0-7.776-10.634.5.5 0 1 1 .367-.93 13.324 13.324 0 0 1 8.41 11.5.5.5 0 0 1-.465.533l-.035-.003ZM35.853 20.034a.5.5 0 0 1 .448.279l2.072 4.2 4.633.674a.5.5 0 0 1 .276.853l-3.348 3.262.791 4.614a.5.5 0 0 1-.726.527l-4.143-2.177-4.144 2.179a.5.5 0 0 1-.726-.527l.791-4.614-3.352-3.267a.499.499 0 0 1 .277-.853l4.634-.671 2.07-4.2a.5.5 0 0 1 .447-.279Zm6.006 6-3.89-.566a.5.5 0 0 1-.376-.274l-1.74-3.527-1.736 3.523a.501.501 0 0 1-.377.274l-3.89.566 2.816 2.743a.5.5 0 0 1 .144.443l-.663 3.872 3.479-1.83a.5.5 0 0 1 .465 0l3.478 1.83-.666-3.875a.5.5 0 0 1 .145-.443l2.811-2.736Z" fill="#A51890"></path>
-													<path d="M35.842 11.636c.232 0 .467.005.7.015h.023A15.853 15.853 0 0 1 46.8 38.962a15.774 15.774 0 0 1-11.653 4.366 15.854 15.854 0 0 1-10.235-27.309 15.774 15.774 0 0 1 10.93-4.383Zm.65 2.015h-.018c-.21-.015-.422-.015-.632-.015a13.854 13.854 0 0 0-10.214 23.2 13.762 13.762 0 0 0 10.233 4.507 13.853 13.853 0 0 0 10.214-23.2 13.763 13.763 0 0 0-9.583-4.492Z" fill="#0A7CC1"></path>
-													<path d="M46.471 60.363a1 1 0 0 1-.6-.2l-9.46-7.138L25.8 60.192a1 1 0 0 1-1.56-.829v-21.6h2v19.718l9.644-6.514a1 1 0 0 1 1.162.031l8.42 6.357v-19.59h2v21.6a1 1 0 0 1-1 1l.006-.002Z" fill="#0A7CC1"></path>
-												</svg>
-											</div>
-											<div class="sc-a0df35ed-10 kcWKoe">
-												<div class="sc-a0df35ed-18 bJlLBP">
-													<div data-test-id="card-container-headline-text" type="related_content" class="sc-a0df35ed-2 dDpLOM">
-														<h3 class="sc-894dfc76-2 eEMbQq">
-															<span>註冊成為xxxMyACUVUE<sup style="line-height: 0">®</sup>會員</span>
-														</h3>
-													</div>
-													<div data-test-id="card-container-body-text" type="related_content" class="sc-a0df35ed-4 AVSBg">
-														<div data-test-id="rich-text" class="sc-69c891d5-0 ffIIyQ">
-															<div class="sc-894dfc76-5 fyuRPN">
-																<span>
-																	<p>
-																		<span>立即成為MyACUVUE</span>
-																		<sup style="line-height: 0">®</sup>
-																		<span>會員，尊享獨家精彩禮遇</span>
-																	</p>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div buttonheight="0" type="related_content" class="sc-a0df35ed-7 dzgKRH">
-													<a data-component-id="card-button-link" data-test-id="card-button-link" href="http://app.acuvue.com.hk/phone-registration" role="link" tabindex="0" target="_self" variant="secondary" aria-label="立即註冊" class="sc-4cfe67d8-1 sc-4fd2e8ea-0 ebMCdH dDFtgV">
-														<label class="sc-c2ede849-2 bQCzI">立即註冊</label>
-														<i class="sc-96e811ea-0 iIqhRH icon sc-c2ede849-1 bNeyvQ arrow_small_right" data-test-id="card-button-link-icon"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div> -->
 								</div>
 							</div>
 						</div>
@@ -2273,196 +2427,6 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 		</main>
 		<div data-test-id="footer-container" class="sc-32e09472-0 Aixaf">
 			<div class="sc-ca09bf68-0 ldWA-DC">
-				<!-- <div class="sc-32e09472-1 bzobVG">
-					<div class="sc-32e09472-2 hlVoJo">
-						<a data-analytics-type="logo" data-test-id="company-logo_nav-link" href="" tabindex="0" target="_blank">
-							<img src="static/image2/i_logo.png" alt="ACUVUE" title="ACUVUE" width="154" height="28" loading="lazy" sizes="(max-width: 768px) 132px, (max-width: 1200px) 154px" 
-								srcset="" class="sc-83289136-1 kDvmdk sc-baeee1d9-0 hHQvYm">
-						</a>
-					</div>
-				</div>
-				<div>
-					<div class="sc-32e09472-3 cFXEfQ">
-						<div data-test-id="column-links-container" class="sc-aeaf9756-0 fsIoeq">
-							<div class="sc-aeaf9756-5 fCpILT">
-								<div data-test-id="accordion-group" class="sc-85af2d32-7 fVpBTD">
-									<div data-test-id="accordion-group-container" class="sc-85af2d32-8 bCBIcd">
-										<div class="sc-85af2d32-4 cmfSwj null-accordion-0" data-test-id="accordion-wrapper-column-links_accordion">
-											<div class="sc-85af2d32-2 bWwhNx">
-												<div data-test-id="accordion-column-links_accordion" role="button" tabindex="0" class="sc-85af2d32-3 keOupW">
-													<div data-test-id="accordion-title-column-links_accordion" class="sc-85af2d32-0 gYMJxl">
-														<div class="sc-894dfc76-9 jywGKx">
-															<span role="button" aria-label="為甚麼選擇ACUVUE®？" class="sc-85af2d32-1 fcKUGy">為甚麼選擇ACUVUE<sup style="line-height: 0">®</sup>？</span>
-														</div>
-													</div>
-													<div style="transform:rotate(0deg)" class="sc-42787605-0 bJUvor">
-														<i class="sc-96e811ea-0 lgRUFH icon chevron_small_down"></i>
-													</div>
-												</div>
-											</div>
-											<div style="overflow:hidden;opacity:0;height:0">
-												<div class="sc-85af2d32-6 jvLjVC accordion-content" data-test-id="accordion-content-column-links_accordion">
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="為甚麼選擇ACUVUE®？" data-analytics-sub-category="驗配隱形眼鏡" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="why-acuvue.html" tabindex="-1" target="_blank" aria-label="驗配隱形眼鏡">
-															<span>驗配隱形眼鏡</span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="為甚麼選擇ACUVUE®？" data-analytics-sub-category="搜尋眼科視光師" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="find-an-eye-doctor.html" tabindex="-1" target="_blank" aria-label="搜尋眼科視光師">
-															<span>搜尋眼科視光師</span>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="sc-85af2d32-4 cmfSwj null-accordion-1" data-test-id="accordion-wrapper-column-links_accordion">
-											<div class="sc-85af2d32-2 bWwhNx">
-												<div data-test-id="accordion-column-links_accordion" role="button" tabindex="0" class="sc-85af2d32-3 keOupW">
-													<div data-test-id="accordion-title-column-links_accordion" class="sc-85af2d32-0 gYMJxl">
-														<div class="sc-894dfc76-9 jywGKx">
-															<span role="button" aria-label="尋求協助" class="sc-85af2d32-1 fcKUGy">尋求協助</span>
-														</div>
-													</div>
-													<div style="transform:rotate(0deg)" class="sc-42787605-0 bJUvor">
-														<i class="sc-96e811ea-0 lgRUFH icon chevron_small_down"></i>
-													</div>
-												</div>
-											</div>
-											<div style="overflow:hidden;opacity:0;height:0">
-												<div class="sc-85af2d32-6 jvLjVC accordion-content" data-test-id="accordion-content-column-links_accordion">
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="尋求協助" data-analytics-sub-category="聯絡我們" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="contact-us.html" tabindex="-1" target="_blank" aria-label="聯絡我們">
-															<span>聯絡我們</span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="尋求協助" data-analytics-sub-category="常見問題" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="faq.html" tabindex="-1" target="_blank" aria-label="常見問題">
-															<span>常見問題</span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="尋求協助" data-analytics-sub-category="配戴者使用指南" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="patient-instruction-guides.html" tabindex="-1" target="_blank" aria-label="配戴者使用指南">
-															<span>配戴者使用指南</span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="尋求協助" data-analytics-sub-category="網站地圖" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="sitemap.html" tabindex="-1" target="_blank" aria-label="網站地圖">
-															<span>網站地圖</span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="尋求協助" data-analytics-sub-category="其他ACUVUE®網站 " data-analytics-type="link_click" data-test-id="column-links_nav-link" href="locations-list.html" tabindex="-1" target="_blank" aria-label="其他ACUVUE®網站 ">
-															<span>其他ACUVUE<sup style="line-height: 0">®</sup>網站 </span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="尋求協助" data-analytics-sub-category="更新產品包裝事宜" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="product-packaging-update-reminder.html" tabindex="-1" target="_blank" aria-label="更新產品包裝事宜">
-															<span>更新產品包裝事宜</span>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="sc-85af2d32-4 cmfSwj null-accordion-2" data-test-id="accordion-wrapper-column-links_accordion">
-											<div class="sc-85af2d32-2 bWwhNx">
-												<div data-test-id="accordion-column-links_accordion" role="button" tabindex="0" class="sc-85af2d32-3 keOupW">
-													<div data-test-id="accordion-title-column-links_accordion" class="sc-85af2d32-0 gYMJxl">
-														<div class="sc-894dfc76-9 jywGKx">
-															<span role="button" aria-label="MyACUVUE®" class="sc-85af2d32-1 fcKUGy">MyACUVUE<sup style="line-height: 0">®</sup>
-															</span>
-														</div>
-													</div>
-													<div style="transform:rotate(0deg)" class="sc-42787605-0 bJUvor">
-														<i class="sc-96e811ea-0 lgRUFH icon chevron_small_down"></i>
-													</div>
-												</div>
-											</div>
-											<div style="overflow:hidden;opacity:0;height:0">
-												<div class="sc-85af2d32-6 jvLjVC accordion-content" data-test-id="accordion-content-column-links_accordion">
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="MyACUVUE®" data-analytics-sub-category="註冊MyACUVUE®" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="http://app.acuvue.com.hk/phone-registration" tabindex="-1" target="_blank" aria-label="註冊MyACUVUE®">
-															<span>註冊MyACUVUE<sup style="line-height: 0">®</sup>
-															</span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="MyACUVUE®" data-analytics-sub-category="MyACUVUE®會員禮遇" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="membership-benefits.html" tabindex="-1" target="_blank" aria-label="MyACUVUE®會員禮遇">
-															<span>MyACUVUE<sup style="line-height: 0">®</sup>會員禮遇</span>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="sc-85af2d32-4 cmfSwj null-accordion-3" data-test-id="accordion-wrapper-column-links_accordion">
-											<div class="sc-85af2d32-2 bWwhNx">
-												<div data-test-id="accordion-column-links_accordion" role="button" tabindex="0" class="sc-85af2d32-3 keOupW">
-													<div data-test-id="accordion-title-column-links_accordion" class="sc-85af2d32-0 gYMJxl">
-														<div class="sc-894dfc76-9 jywGKx">
-															<span role="button" aria-label="關於我們" class="sc-85af2d32-1 fcKUGy">關於我們</span>
-														</div>
-													</div>
-													<div style="transform:rotate(0deg)" class="sc-42787605-0 bJUvor">
-														<i class="sc-96e811ea-0 lgRUFH icon chevron_small_down"></i>
-													</div>
-												</div>
-											</div>
-											<div style="overflow:hidden;opacity:0;height:0">
-												<div class="sc-85af2d32-6 jvLjVC accordion-content" data-test-id="accordion-content-column-links_accordion">
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="關於我們" data-analytics-sub-category="關於ACUVUE®" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="about.html" tabindex="-1" target="_blank" aria-label="關於ACUVUE®">
-															<span>關於ACUVUE<sup style="line-height: 0">®</sup>
-															</span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="關於我們" data-analytics-sub-category="專業人士專區" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="professionals.html" tabindex="-1" target="_blank" aria-label="專業人士專區">
-															<span>專業人士專區</span>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="sc-85af2d32-4 cmfSwj null-accordion-4" data-test-id="accordion-wrapper-column-links_accordion">
-											<div class="sc-85af2d32-2 bWwhNx">
-												<div data-test-id="accordion-column-links_accordion" role="button" tabindex="0" class="sc-85af2d32-3 keOupW">
-													<div data-test-id="accordion-title-column-links_accordion" class="sc-85af2d32-0 gYMJxl">
-														<div class="sc-894dfc76-9 jywGKx">
-															<span role="button" aria-label="政策說明" class="sc-85af2d32-1 fcKUGy">政策說明</span>
-														</div>
-													</div>
-													<div style="transform:rotate(0deg)" class="sc-42787605-0 bJUvor">
-														<i class="sc-96e811ea-0 lgRUFH icon chevron_small_down"></i>
-													</div>
-												</div>
-											</div>
-											<div style="overflow:hidden;opacity:0;height:0">
-												<div class="sc-85af2d32-6 jvLjVC accordion-content" data-test-id="accordion-content-column-links_accordion">
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="政策說明" data-analytics-sub-category="使用條款" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="terms-of-use.html" tabindex="-1" target="_blank" aria-label="使用條款">
-															<span>使用條款</span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="政策說明" data-analytics-sub-category="私隱政策" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="privacy-policy.html" tabindex="-1" target="_blank" aria-label="私隱政策">
-															<span>私隱政策</span>
-														</a>
-													</div>
-													<div class="sc-aeaf9756-3 bgnkeQ">
-														<a class="sc-fdd36608-0 drFpBM   " data-analytics-category="政策說明" data-analytics-sub-category="無障礙政策" data-analytics-type="link_click" data-test-id="column-links_nav-link" href="accessibility-policy.html" tabindex="-1" target="_blank" aria-label="無障礙政策">
-															<span>無障礙政策</span>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-		
-				</div> -->
-
 				<div>
                     <div class="sc-32e09472-3 cFXEfQ">
                         <div data-test-id="column-links-container" class="sc-aeaf9756-0 fsIoeq">
@@ -2490,7 +2454,7 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
                                         </a>
                                     </div>
                                     <div class="sc-aeaf9756-3 bgnkeQ">
-                                        <a class="sc-fdd36608-0 drFpBM   " data-analytics-category="為甚麼選擇ACUVUE®？"
+                                        <a class="sc-fdd36608-0 drFpBM   " data-analytics-category="為甚麼選擇？"
                                         data-analytics-sub-category="搜尋眼科視光師" data-analytics-type="link_click"
                                         data-cslp="" data-test-id="nav-link" href="javascript:void(0)"
                                         tabindex="0" target="_blank" aria-label="搜尋眼科視光師">
@@ -2891,411 +2855,332 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 
 	</div>
 	<!--AI chat-->
-		<div id="aiChat" style="position: fixed;background-color: #FFFFFF; user-select: auto; width: 390px; height: 700px; box-shadow:0px 0px 8px rgba(0,0,0,.12);border-radius:2%;
-					 display: none; top: 0px; right: 800px; cursor: auto; z-index: 100;
-					 pointer-events: auto; transform: translate(753px, 214px); max-width: 1143px; 
-					 max-height: 914px; min-width: 390px; min-height: 700px; box-sizing: border-box; flex-shrink: 0;">
-			<div class="header-module__headerContainer__8gjiO" style="display: flex; align-items:center;border-top-left-radius:16px; border-top-right-radius:16px;">
-				<img src="static/image2/p_footer_character.png" width="30px" height="30px" style="margin: 0 15px;">
-				<span>阿噜噜AI&nbsp;&nbsp;助手</span>
-				<div style="position: absolute;right: 10px;top: 15px;">
-					<button class="header-module__dropdownTrigger__fgfFB" aria-label="Chat window options" aria-expanded="false" aria-haspopup="true" onclick="document.getElementById('aiChat').style.display='none';document.getElementById('aiChatButton').style.display='inline-block'">
-						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=""><path d="M1 4L8 11L15 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
-				</div>
+	<div id="aiChat" style="position: fixed;background-color: #FFFFFF; user-select: auto; width: 390px; height: 700px; box-shadow:0px 0px 8px rgba(0,0,0,.12);border-radius:2%;
+					display: none; top: 0px; right: 800px; cursor: auto; z-index: 100;
+					pointer-events: auto; transform: translate(753px, 214px); max-width: 1143px; 
+					max-height: 914px; min-width: 390px; min-height: 700px; box-sizing: border-box; flex-shrink: 0;">
+		<div class="header-module__headerContainer__8gjiO" style="display: flex; align-items:center;border-top-left-radius:16px; border-top-right-radius:16px;">
+			<img src="static/image2/p_footer_character.png" width="30px" height="30px" style="margin: 0 15px;">
+			<span>阿噜噜AI&nbsp;&nbsp;助手</span>
+			<div style="position: absolute;right: 10px;top: 15px;">
+				<button class="header-module__dropdownTrigger__fgfFB" aria-label="Chat window options" aria-expanded="false" aria-haspopup="true" onclick="document.getElementById('aiChat').style.display='none';document.getElementById('aiChatButton').style.display='inline-block'">
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=""><path d="M1 4L8 11L15 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
 			</div>
-			<div class="body-module__chatPanelContainer__nu0vh" style="background-color: #fafafa;">
-				<div class="body-module__BotText__2o1f- body-module__individualBotText__N2HvU" style="display:grid;grid-template-columns:60px 1fr;padding-top: 10px;">
-					<svg style="margin-left: 15px;" width="35" height="35" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg"
-					xmlns:xlink="http://www.w3.org/1999/xlink">
-						<mask id="mask0_15223_33467" maskUnits="userSpaceOnUse" x="8" y="0" width="38"
-						height="39" style="mask-type: luminance;">
-							<path d="M35.9952 38.3431C42.8464 30.0808 42.1437 18.924 36.9694 12.2283C36.4981 11.5989 35.9888 10.9988 35.4442 10.4311C32.0904 6.82403 27.5366 4.55082 22.6277 4.03315C17.7189 3.51548 12.7881 4.78849 8.75 7.61604C17.2701 -1.92652 30.9087 -0.725746 38.4386 6.24827C47.2143 14.3992 48.3481 29.882 35.9952 38.3431Z"
-							fill="white">
+		</div>
+		<div class="body-module__chatPanelContainer__nu0vh" style="background-color: #fafafa;">
+			<div class="body-module__BotText__2o1f- body-module__individualBotText__N2HvU" style="display:grid;grid-template-columns:60px 1fr;padding-top: 10px;">
+				<svg style="margin-left: 15px;" width="35" height="35" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink">
+					<mask id="mask0_15223_33467" maskUnits="userSpaceOnUse" x="8" y="0" width="38"
+					height="39" style="mask-type: luminance;">
+						<path d="M35.9952 38.3431C42.8464 30.0808 42.1437 18.924 36.9694 12.2283C36.4981 11.5989 35.9888 10.9988 35.4442 10.4311C32.0904 6.82403 27.5366 4.55082 22.6277 4.03315C17.7189 3.51548 12.7881 4.78849 8.75 7.61604C17.2701 -1.92652 30.9087 -0.725746 38.4386 6.24827C47.2143 14.3992 48.3481 29.882 35.9952 38.3431Z"
+						fill="white">
+						</path>
+					</mask>
+					<g mask="url(#mask0_15223_33467)">
+						<mask id="mask1_15223_33467" maskUnits="userSpaceOnUse" x="4" y="-4" width="46"
+						height="47" style="mask-type: luminance;">
+							<path d="M49.147 -3.22266H4.75781V42.3192H49.147V-3.22266Z" fill="white">
 							</path>
 						</mask>
-						<g mask="url(#mask0_15223_33467)">
-							<mask id="mask1_15223_33467" maskUnits="userSpaceOnUse" x="4" y="-4" width="46"
+						<g mask="url(#mask1_15223_33467)">
+							<mask id="mask2_15223_33467" maskUnits="userSpaceOnUse" x="4" y="-4" width="46"
 							height="47" style="mask-type: luminance;">
 								<path d="M49.147 -3.22266H4.75781V42.3192H49.147V-3.22266Z" fill="white">
 								</path>
 							</mask>
-							<g mask="url(#mask1_15223_33467)">
-								<mask id="mask2_15223_33467" maskUnits="userSpaceOnUse" x="4" y="-4" width="46"
-								height="47" style="mask-type: luminance;">
-									<path d="M49.147 -3.22266H4.75781V42.3192H49.147V-3.22266Z" fill="white">
-									</path>
-								</mask>
-								<g mask="url(#mask2_15223_33467)">
-									<rect x="4.66406" y="-3.34375" width="44.8444" height="45.8043" fill="url(#pattern0_15223_33467)">
-									</rect>
-								</g>
+							<g mask="url(#mask2_15223_33467)">
+								<rect x="4.66406" y="-3.34375" width="44.8444" height="45.8043" fill="url(#pattern0_15223_33467)">
+								</rect>
 							</g>
 						</g>
-						<mask id="mask3_15223_33467" maskUnits="userSpaceOnUse" x="3" y="11" width="37"
-						height="38" style="mask-type: luminance;">
-							<path d="M12.0034 11.3203C1.91018 24.7435 8.41804 40.5444 21.6973 44.8306C27.1431 46.421 32.9483 45.9677 39.0329 42.2302C30.944 51.1287 17.3135 50.1824 10.1828 43.7173C1.35921 36.5922 -0.73289 21.1332 12.0034 11.3203Z"
-							fill="white">
+					</g>
+					<mask id="mask3_15223_33467" maskUnits="userSpaceOnUse" x="3" y="11" width="37"
+					height="38" style="mask-type: luminance;">
+						<path d="M12.0034 11.3203C1.91018 24.7435 8.41804 40.5444 21.6973 44.8306C27.1431 46.421 32.9483 45.9677 39.0329 42.2302C30.944 51.1287 17.3135 50.1824 10.1828 43.7173C1.35921 36.5922 -0.73289 21.1332 12.0034 11.3203Z"
+						fill="white">
+						</path>
+					</mask>
+					<g mask="url(#mask3_15223_33467)">
+						<mask id="mask4_15223_33467" maskUnits="userSpaceOnUse" x="-1" y="7" width="45"
+						height="46" style="mask-type: luminance;">
+							<path d="M43.0216 7.34375H-0.984375V52.7266H43.0216V7.34375Z" fill="white">
 							</path>
 						</mask>
-						<g mask="url(#mask3_15223_33467)">
-							<mask id="mask4_15223_33467" maskUnits="userSpaceOnUse" x="-1" y="7" width="45"
+						<g mask="url(#mask4_15223_33467)">
+							<mask id="mask5_15223_33467" maskUnits="userSpaceOnUse" x="-1" y="7" width="45"
 							height="46" style="mask-type: luminance;">
 								<path d="M43.0216 7.34375H-0.984375V52.7266H43.0216V7.34375Z" fill="white">
 								</path>
 							</mask>
-							<g mask="url(#mask4_15223_33467)">
-								<mask id="mask5_15223_33467" maskUnits="userSpaceOnUse" x="-1" y="7" width="45"
-								height="46" style="mask-type: luminance;">
-									<path d="M43.0216 7.34375H-0.984375V52.7266H43.0216V7.34375Z" fill="white">
-									</path>
-								</mask>
-								<g mask="url(#mask5_15223_33467)">
-									<rect x="-1.07812" y="7.34375" width="44.4611" height="45.4226" fill="url(#pattern1_15223_33467)">
-									</rect>
-								</g>
+							<g mask="url(#mask5_15223_33467)">
+								<rect x="-1.07812" y="7.34375" width="44.4611" height="45.4226" fill="url(#pattern1_15223_33467)">
+								</rect>
 							</g>
 						</g>
-						<mask id="mask6_15223_33467" maskUnits="userSpaceOnUse" x="10" y="9" width="38"
-						height="37" style="mask-type: luminance;">
-							<path d="M41.1627 9.41406C51.8787 19.5451 48.8923 34.9483 39.8212 41.6758C31.5965 47.7751 18.1576 47.3775 10.8672 37.0398C14.3866 39.862 18.7093 41.5084 23.2215 41.7454C27.7338 41.9823 32.2064 40.7978 36.0043 38.3598C44.4046 32.7774 48.8364 20.4993 41.1627 9.41406Z"
-							fill="white">
+					</g>
+					<mask id="mask6_15223_33467" maskUnits="userSpaceOnUse" x="10" y="9" width="38"
+					height="37" style="mask-type: luminance;">
+						<path d="M41.1627 9.41406C51.8787 19.5451 48.8923 34.9483 39.8212 41.6758C31.5965 47.7751 18.1576 47.3775 10.8672 37.0398C14.3866 39.862 18.7093 41.5084 23.2215 41.7454C27.7338 41.9823 32.2064 40.7978 36.0043 38.3598C44.4046 32.7774 48.8364 20.4993 41.1627 9.41406Z"
+						fill="white">
+						</path>
+					</mask>
+					<g mask="url(#mask6_15223_33467)">
+						<mask id="mask7_15223_33467" maskUnits="userSpaceOnUse" x="6" y="5" width="46"
+						height="45" style="mask-type: luminance;">
+							<path d="M51.9909 5.4375H6.875V49.6354H51.9909V5.4375Z" fill="white">
 							</path>
 						</mask>
-						<g mask="url(#mask6_15223_33467)">
-							<mask id="mask7_15223_33467" maskUnits="userSpaceOnUse" x="6" y="5" width="46"
+						<g mask="url(#mask7_15223_33467)">
+							<mask id="mask8_15223_33467" maskUnits="userSpaceOnUse" x="6" y="5" width="46"
 							height="45" style="mask-type: luminance;">
 								<path d="M51.9909 5.4375H6.875V49.6354H51.9909V5.4375Z" fill="white">
 								</path>
 							</mask>
-							<g mask="url(#mask7_15223_33467)">
-								<mask id="mask8_15223_33467" maskUnits="userSpaceOnUse" x="6" y="5" width="46"
-								height="45" style="mask-type: luminance;">
-									<path d="M51.9909 5.4375H6.875V49.6354H51.9909V5.4375Z" fill="white">
-									</path>
-								</mask>
-								<g mask="url(#mask8_15223_33467)">
-									<rect x="6.57812" y="5.4375" width="45.6109" height="44.2774" fill="url(#pattern2_15223_33467)">
-									</rect>
-								</g>
+							<g mask="url(#mask8_15223_33467)">
+								<rect x="6.57812" y="5.4375" width="45.6109" height="44.2774" fill="url(#pattern2_15223_33467)">
+								</rect>
 							</g>
 						</g>
-						<mask id="mask9_15223_33467" maskUnits="userSpaceOnUse" x="0" y="3" width="37"
-						height="37" style="mask-type: luminance;">
-							<path d="M36.9723 12.2311C15.676 -1.92364 -5.34083 21.3045 6.42123 39.6103C-2.79358 30.4495 -2.15477 15.7539 8.75288 7.64277C12.7882 4.81232 17.7173 3.5353 22.6261 4.04857C27.5348 4.56184 32.0901 6.83056 35.4471 10.434C35.9917 11.0016 36.501 11.6018 36.9723 12.2311Z"
-							fill="white">
+					</g>
+					<mask id="mask9_15223_33467" maskUnits="userSpaceOnUse" x="0" y="3" width="37"
+					height="37" style="mask-type: luminance;">
+						<path d="M36.9723 12.2311C15.676 -1.92364 -5.34083 21.3045 6.42123 39.6103C-2.79358 30.4495 -2.15477 15.7539 8.75288 7.64277C12.7882 4.81232 17.7173 3.5353 22.6261 4.04857C27.5348 4.56184 32.0901 6.83056 35.4471 10.434C35.9917 11.0016 36.501 11.6018 36.9723 12.2311Z"
+						fill="white">
+						</path>
+					</mask>
+					<g mask="url(#mask9_15223_33467)">
+						<mask id="mask10_15223_33467" maskUnits="userSpaceOnUse" x="-4" y="-1"
+						width="45" height="45" style="mask-type: luminance;">
+							<path d="M40.964 -0.0546875H-3.99219V43.5866H40.964V-0.0546875Z" fill="white">
 							</path>
 						</mask>
-						<g mask="url(#mask9_15223_33467)">
-							<mask id="mask10_15223_33467" maskUnits="userSpaceOnUse" x="-4" y="-1"
+						<g mask="url(#mask10_15223_33467)">
+							<mask id="mask11_15223_33467" maskUnits="userSpaceOnUse" x="-4" y="-1"
 							width="45" height="45" style="mask-type: luminance;">
 								<path d="M40.964 -0.0546875H-3.99219V43.5866H40.964V-0.0546875Z" fill="white">
 								</path>
 							</mask>
-							<g mask="url(#mask10_15223_33467)">
-								<mask id="mask11_15223_33467" maskUnits="userSpaceOnUse" x="-4" y="-1"
-								width="45" height="45" style="mask-type: luminance;">
-									<path d="M40.964 -0.0546875H-3.99219V43.5866H40.964V-0.0546875Z" fill="white">
-									</path>
-								</mask>
-								<g mask="url(#mask11_15223_33467)">
-									<rect x="-4.14844" y="-0.285156" width="45.2276" height="43.8958" fill="url(#pattern3_15223_33467)">
-									</rect>
-								</g>
+							<g mask="url(#mask11_15223_33467)">
+								<rect x="-4.14844" y="-0.285156" width="45.2276" height="43.8958" fill="url(#pattern3_15223_33467)">
+								</rect>
 							</g>
 						</g>
-						<path d="M19.9143 18.6037C19.9143 17.3081 18.8597 16.2578 17.5587 16.2578C16.2578 16.2578 15.2031 17.3081 15.2031 18.6037V25.0926C15.2031 26.3882 16.2578 27.4385 17.5587 27.4385C18.8597 27.4385 19.9143 26.3882 19.9143 25.0926V18.6037Z"
-						fill="url(#paint0_linear_15223_33467)">
-						</path>
-						<path d="M33.0081 18.6037C33.0081 17.3081 31.9534 16.2578 30.6525 16.2578C29.3515 16.2578 28.2969 17.3081 28.2969 18.6037V25.0926C28.2969 26.3882 29.3515 27.4385 30.6525 27.4385C31.9534 27.4385 33.0081 26.3882 33.0081 25.0926V18.6037Z"
-						fill="url(#paint1_linear_15223_33467)">
-						</path>
-						<defs>
-							<pattern id="pattern0_15223_33467" patternContentUnits="objectBoundingBox"
-							width="1" height="1">
-								<use xlink:href="#image0_15223_33467" transform="scale(0.00854701 0.00833333)">
-								</use>
-							</pattern>
-							<pattern id="pattern1_15223_33467" patternContentUnits="objectBoundingBox"
-							width="1" height="1">
-								<use xlink:href="#image1_15223_33467" transform="scale(0.00862069 0.00840336)">
-								</use>
-							</pattern>
-							<pattern id="pattern2_15223_33467" patternContentUnits="objectBoundingBox"
-							width="1" height="1">
-								<use xlink:href="#image2_15223_33467" transform="scale(0.00840336 0.00862069)">
-								</use>
-							</pattern>
-							<pattern id="pattern3_15223_33467" patternContentUnits="objectBoundingBox"
-							width="1" height="1">
-								<use xlink:href="#image3_15223_33467" transform="scale(0.00847458 0.00869565)">
-								</use>
-							</pattern>
-							<linearGradient id="paint0_linear_15223_33467" x1="17.5587" y1="27.4306"
-							x2="17.5587" y2="16.2578" gradientUnits="userSpaceOnUse">
-								<stop offset="0.02" stop-color="#D452FF">
-								</stop>
-								<stop offset="0.18" stop-color="#D052FF">
-								</stop>
-								<stop offset="0.32" stop-color="#C653FE">
-								</stop>
-								<stop offset="0.45" stop-color="#B355FE">
-								</stop>
-								<stop offset="0.58" stop-color="#9A57FD">
-								</stop>
-								<stop offset="0.71" stop-color="#785AFB">
-								</stop>
-								<stop offset="0.84" stop-color="#505DFA">
-								</stop>
-								<stop offset="0.96" stop-color="#2062F8">
-								</stop>
-								<stop offset="1" stop-color="#0F63F7">
-								</stop>
-							</linearGradient>
-							<linearGradient id="paint1_linear_15223_33467" x1="30.6525" y1="27.4306"
-							x2="30.6525" y2="16.2578" gradientUnits="userSpaceOnUse">
-								<stop offset="0.02" stop-color="#D452FF">
-								</stop>
-								<stop offset="0.18" stop-color="#D052FF">
-								</stop>
-								<stop offset="0.32" stop-color="#C653FE">
-								</stop>
-								<stop offset="0.45" stop-color="#B355FE">
-								</stop>
-								<stop offset="0.58" stop-color="#9A57FD">
-								</stop>
-								<stop offset="0.71" stop-color="#785AFB">
-								</stop>
-								<stop offset="0.84" stop-color="#505DFA">
-								</stop>
-								<stop offset="0.96" stop-color="#2062F8">
-								</stop>
-								<stop offset="1" stop-color="#0F63F7">
-								</stop>
-							</linearGradient>
-							<image id="image0_15223_33467" width="117" height="120" preserveAspectRatio="none"
-							xlink:href="data:image/png;base64,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">
-							</image>
-							<image id="image1_15223_33467" width="116" height="119" preserveAspectRatio="none"
-							xlink:href="data:image/png;base64,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">
-							</image>
-							<image id="image2_15223_33467" width="119" height="116" preserveAspectRatio="none"
-							xlink:href="data:image/png;base64,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">
-							</image>
-							<image id="image3_15223_33467" width="118" height="115" preserveAspectRatio="none"
-							xlink:href="data:image/png;base64,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">
-							</image>
-						</defs>
-					</svg>
-	<div class="body-module__chatBubble__JIy2G body-module__welcome__jIljb" style="
-			padding-top: var(--space-static-m-rufxr5, 16px);
-			position: relative;
-			background: var(--color-background-container-content-x1dxuu, #ffffff);
-			border-radius: 12px;
-			box-shadow: 0 0 0 1px var(--color-border-divider-default-6sbidx, #eaeded);
-			clip-path: ellipse(calc(100% - 18px) calc(100% - 18px) at center);
-			margin-bottom: 180px;">
-		<div>
-			<div style="margin:15px 0px;" class="body-module__markdown__Q02fA">
-				<p>
-					Hi！终于等到你，AI 助手为您服务～
-				</p>
-				<p>
-					想要咨询？欢迎选择下面的选项：
-				</p>
-			</div>
-		</div>
-		<div class="body-module__answerButtonContainer__+fliE">
-			<div class="awsui_root_18582_whr0e_145 awsui_vertical_18582_whr0e_192 awsui_vertical-xs_18582_whr0e_201">
-				<div class="awsui_child_18582_whr0e_149">
-					<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot">
-						<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
-						data-analytics-funnel-value="button:r6:" type="button" data-analytics-performance-mark="0-1757915064527-8405">
-							<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
-								<span>
-									角膜塑形镜的一般问题
-								</span>
-								<span class="body-module__choiceButtonArrowIcon__61Wzs">
-									<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 0L3.67418 0.883883L6.98223 4.19194H0.366117V5.44194H6.98223L3.67418 8.75L4.55806 9.63388L9.375 4.81694L4.55806 0Z"
-										fill="currentColor">
-										</path>
-									</svg>
-								</span>
-							</span>
-						</button>
-					</div>
-				</div>
-				<div class="awsui_child_18582_whr0e_149">
-					<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot">
-						<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
-						data-analytics-funnel-value="button:r8:" type="button" data-analytics-performance-mark="1-1757915064528-7384">
-							<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
-								<span>
-									角膜塑形镜的使用问题
-								</span>
-								<span class="body-module__choiceButtonArrowIcon__61Wzs">
-									<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 0L3.67418 0.883883L6.98223 4.19194H0.366117V5.44194H6.98223L3.67418 8.75L4.55806 9.63388L9.375 4.81694L4.55806 0Z"
-										fill="currentColor">
-										</path>
-									</svg>
-								</span>
-							</span>
-						</button>
-					</div>
-				</div>
-				<div class="awsui_child_18582_whr0e_149">
-					<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot">
-						<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
-						data-analytics-funnel-value="button:ra:" type="button" data-analytics-performance-mark="2-1757915064528-574">
-							<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
-								<span>
-									角膜塑形镜的治疗问题
-								</span>
-								<span class="body-module__choiceButtonArrowIcon__61Wzs">
-									<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 0L3.67418 0.883883L6.98223 4.19194H0.366117V5.44194H6.98223L3.67418 8.75L4.55806 9.63388L9.375 4.81694L4.55806 0Z"
-										fill="currentColor">
-										</path>
-									</svg>
-								</span>
-							</span>
-						</button>
-					</div>
-				</div>
-				<div class="awsui_child_18582_whr0e_149">
-					<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot">
-						<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
-						data-analytics-funnel-value="button:rc:" type="button" data-analytics-performance-mark="3-1757915064529-5505">
-							<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
-								<span>
-									关于处方
-								</span>
-								<span class="body-module__choiceButtonArrowIcon__61Wzs">
-									<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 0L3.67418 0.883883L6.98223 4.19194H0.366117V5.44194H6.98223L3.67418 8.75L4.55806 9.63388L9.375 4.81694L4.55806 0Z"
-										fill="currentColor">
-										</path>
-									</svg>
-								</span>
-							</span>
-						</button>
-					</div>
-				</div>
-				<div style="margin-top: 20px;" class="awsui_child_18582_whr0e_149">
-					<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot body-module__liveChatButton__qnwb7">
-						<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
-						data-analytics-funnel-value="button:re:" type="button" data-analytics-performance-mark="4-1757915064529-7808">
-							<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
-								<span>
-									我想转人工
-								</span>
-							</span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div>
+					</g>
+					<path d="M19.9143 18.6037C19.9143 17.3081 18.8597 16.2578 17.5587 16.2578C16.2578 16.2578 15.2031 17.3081 15.2031 18.6037V25.0926C15.2031 26.3882 16.2578 27.4385 17.5587 27.4385C18.8597 27.4385 19.9143 26.3882 19.9143 25.0926V18.6037Z"
+					fill="url(#paint0_linear_15223_33467)">
+					</path>
+					<path d="M33.0081 18.6037C33.0081 17.3081 31.9534 16.2578 30.6525 16.2578C29.3515 16.2578 28.2969 17.3081 28.2969 18.6037V25.0926C28.2969 26.3882 29.3515 27.4385 30.6525 27.4385C31.9534 27.4385 33.0081 26.3882 33.0081 25.0926V18.6037Z"
+					fill="url(#paint1_linear_15223_33467)">
+					</path>
+					<defs>
+						<pattern id="pattern0_15223_33467" patternContentUnits="objectBoundingBox"
+						width="1" height="1">
+							<use xlink:href="#image0_15223_33467" transform="scale(0.00854701 0.00833333)">
+							</use>
+						</pattern>
+						<pattern id="pattern1_15223_33467" patternContentUnits="objectBoundingBox"
+						width="1" height="1">
+							<use xlink:href="#image1_15223_33467" transform="scale(0.00862069 0.00840336)">
+							</use>
+						</pattern>
+						<pattern id="pattern2_15223_33467" patternContentUnits="objectBoundingBox"
+						width="1" height="1">
+							<use xlink:href="#image2_15223_33467" transform="scale(0.00840336 0.00862069)">
+							</use>
+						</pattern>
+						<pattern id="pattern3_15223_33467" patternContentUnits="objectBoundingBox"
+						width="1" height="1">
+							<use xlink:href="#image3_15223_33467" transform="scale(0.00847458 0.00869565)">
+							</use>
+						</pattern>
+						<linearGradient id="paint0_linear_15223_33467" x1="17.5587" y1="27.4306"
+						x2="17.5587" y2="16.2578" gradientUnits="userSpaceOnUse">
+							<stop offset="0.02" stop-color="#D452FF">
+							</stop>
+							<stop offset="0.18" stop-color="#D052FF">
+							</stop>
+							<stop offset="0.32" stop-color="#C653FE">
+							</stop>
+							<stop offset="0.45" stop-color="#B355FE">
+							</stop>
+							<stop offset="0.58" stop-color="#9A57FD">
+							</stop>
+							<stop offset="0.71" stop-color="#785AFB">
+							</stop>
+							<stop offset="0.84" stop-color="#505DFA">
+							</stop>
+							<stop offset="0.96" stop-color="#2062F8">
+							</stop>
+							<stop offset="1" stop-color="#0F63F7">
+							</stop>
+						</linearGradient>
+						<linearGradient id="paint1_linear_15223_33467" x1="30.6525" y1="27.4306"
+						x2="30.6525" y2="16.2578" gradientUnits="userSpaceOnUse">
+							<stop offset="0.02" stop-color="#D452FF">
+							</stop>
+							<stop offset="0.18" stop-color="#D052FF">
+							</stop>
+							<stop offset="0.32" stop-color="#C653FE">
+							</stop>
+							<stop offset="0.45" stop-color="#B355FE">
+							</stop>
+							<stop offset="0.58" stop-color="#9A57FD">
+							</stop>
+							<stop offset="0.71" stop-color="#785AFB">
+							</stop>
+							<stop offset="0.84" stop-color="#505DFA">
+							</stop>
+							<stop offset="0.96" stop-color="#2062F8">
+							</stop>
+							<stop offset="1" stop-color="#0F63F7">
+							</stop>
+						</linearGradient>
+						<image id="image0_15223_33467" width="117" height="120" preserveAspectRatio="none"
+						xlink:href="data:image/png;base64,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">
+						</image>
+						<image id="image1_15223_33467" width="116" height="119" preserveAspectRatio="none"
+						xlink:href="data:image/png;base64,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">
+						</image>
+						<image id="image2_15223_33467" width="119" height="116" preserveAspectRatio="none"
+						xlink:href="data:image/png;base64,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">
+						</image>
+						<image id="image3_15223_33467" width="118" height="115" preserveAspectRatio="none"
+						xlink:href="data:image/png;base64,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">
+						</image>
+					</defs>
+				</svg>
+<div class="body-module__chatBubble__JIy2G body-module__welcome__jIljb" style="
+		padding-top: var(--space-static-m-rufxr5, 16px);
+		position: relative;
+		background: var(--color-background-container-content-x1dxuu, #ffffff);
+		border-radius: 12px;
+		box-shadow: 0 0 0 1px var(--color-border-divider-default-6sbidx, #eaeded);
+		clip-path: ellipse(calc(100% - 18px) calc(100% - 18px) at center);
+		margin-bottom: 180px;">
+	<div>
+		<div style="margin:15px 0px;" class="body-module__markdown__Q02fA">
+			<p>
+				Hi！终于等到你，AI 助手为您服务～
+			</p>
+			<p>
+				想要咨询？欢迎选择下面的选项：
+			</p>
 		</div>
 	</div>
-</div>
-
-			</div>
-
-			<div style="margin-bottom: 10px;background-color: #FFFFFF;" class="body-module__contactBoxContainer__I8Ynl" id="chat-contact-box-container">
-				<div class="body-module__contactAreaContainer__LVi2t" id="chat-contact-area-container">
-					<button class="body-module__contactButton__d+uqY">
-						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-						class="body-module__contactButtonIcon__icJ-2">
-							<path d="M5.07418 3.48813C5.05986 3.50255 5.05067 3.51283 5.04274 3.52253C5.05275 3.51063 5.06323 3.49915 5.07418 3.48813ZM5.04718 3.5116C5.06942 3.47389 5.09233 3.42762 5.11297 3.37572C5.17007 3.23202 5.19742 3.07783 5.1835 2.92134C5.15857 2.64082 4.96281 2.15596 4.59001 1.50333C4.45615 1.26902 4.24804 1.14841 3.95064 1.13116C3.61406 1.11163 3.19424 1.2313 2.77026 1.47872C2.37429 1.70978 2.10736 2.0552 1.97097 2.49417C1.83573 2.9294 1.8335 3.4471 1.96673 3.98207C2.02241 4.20733 2.19547 5.00517 2.20725 5.05686C2.33204 5.60407 2.45891 6.05121 2.63936 6.54035C2.86436 7.15023 3.16132 7.78426 3.55839 8.4794C3.96974 9.1995 4.38222 9.80245 4.80855 10.3245C5.15421 10.7479 5.49382 11.1021 5.89478 11.4732C6.05725 11.6235 6.5746 12.0832 6.60057 12.1067C6.95554 12.4281 7.41393 12.6839 7.86577 12.8003C8.35064 12.9252 8.79354 12.8851 9.1628 12.6696C9.61195 12.4075 9.92876 12.1149 10.0779 11.8334C10.2123 11.5797 10.2102 11.3422 10.0516 11.0645C9.70435 10.4566 9.39678 10.0596 9.15394 9.88026C8.93911 9.72165 8.72182 9.65384 8.4821 9.66667C8.35891 9.6754 8.23301 9.69192 8.08691 9.71728C8.02774 9.72756 7.96763 9.73881 7.88758 9.7544L7.78687 9.77411C7.74549 9.78222 7.71498 9.78813 7.68496 9.79384C7.3734 9.85304 7.1693 9.8765 6.94875 9.8635C6.64355 9.84551 6.36754 9.75 6.11759 9.56168C6.10192 9.54987 6.08687 9.53724 6.0725 9.52384C5.58453 9.06843 5.14335 8.48702 4.74672 7.78145C4.35277 7.08066 4.07739 6.40914 3.92262 5.76562C3.91946 5.75246 3.91677 5.7392 3.91455 5.72585C3.86112 5.40458 3.91707 5.09593 4.06034 4.80188C4.16439 4.58836 4.3038 4.39771 4.49821 4.17899C4.53797 4.13429 4.57855 4.08996 4.63035 4.03434C4.63873 4.02533 4.72619 3.93177 4.75019 3.90584C4.88127 3.76429 4.94554 3.6834 4.96738 3.63856C4.98549 3.60141 5.00759 3.56638 5.03328 3.53411C5.03699 3.52846 5.04175 3.52079 5.04718 3.5116ZM7.47857 8.68415C7.50617 8.67891 7.53486 8.67334 7.57438 8.66561L7.62457 8.65576C7.64527 8.6517 7.66085 8.64866 7.67627 8.64567C7.76305 8.62876 7.82989 8.61625 7.89778 8.60447C8.07996 8.57284 8.24316 8.55151 8.40918 8.53995C8.41154 8.53979 8.41391 8.53964 8.41629 8.53951C8.91937 8.51103 9.39166 8.65747 9.81292 8.96851C10.2072 9.25959 10.6009 9.76777 11.0191 10.4999C11.3724 11.1185 11.3781 11.7711 11.0627 12.3665C10.8022 12.8582 10.336 13.2888 9.72136 13.6474C9.08133 14.0209 8.34116 14.088 7.58982 13.8944C6.95796 13.7316 6.34032 13.3869 5.85517 12.9477C5.83678 12.931 5.31288 12.4656 5.14039 12.3059C4.70338 11.9015 4.32833 11.5103 3.94695 11.0433C3.4807 10.4723 3.03292 9.81773 2.59092 9.04396C2.16313 8.29506 1.83957 7.60421 1.59263 6.93485C1.39331 6.3946 1.25355 5.90202 1.11865 5.31046C1.10366 5.24472 0.933904 4.4621 0.883136 4.25671C0.496962 2.7062 0.954199 1.23466 2.21168 0.500874C2.81258 0.150221 3.44237 -0.029293 4.01463 0.00390616C4.6753 0.042202 5.22844 0.362761 5.55747 0.938768C6.0049 1.72203 6.2532 2.33701 6.29618 2.82028C6.32706 3.1678 6.26868 3.49694 6.14962 3.79656C6.09066 3.94489 6.01464 4.08736 5.94291 4.18946C5.85997 4.34343 5.75033 4.47816 5.56585 4.6774C5.53969 4.70563 5.45069 4.80085 5.44391 4.80813C5.39751 4.85796 5.36228 4.89645 5.32921 4.93365C5.08558 5.20771 4.99793 5.37974 5.0141 5.52333C5.14409 6.05177 5.37809 6.61895 5.71803 7.22367C6.05336 7.82017 6.41649 8.30196 6.80535 8.67074C6.9314 8.7555 7.08259 8.75939 7.47857 8.68415ZM11.0698 7.13224C11.0806 7.44386 10.8394 7.70528 10.5311 7.71617C10.2228 7.72705 9.96412 7.48327 9.95335 7.17167C9.91088 5.94262 9.29005 4.83341 8.30051 4.15749C8.04491 3.9829 7.97773 3.63195 8.15047 3.37361C8.32321 3.11528 8.67043 3.04739 8.92603 3.22197C10.2085 4.09797 11.0147 5.53846 11.0698 7.13224ZM13.7497 7.10922C13.7604 7.42082 13.5192 7.68225 13.2109 7.69313C12.9026 7.70401 12.644 7.46023 12.6332 7.14863C12.5536 4.84619 11.4341 2.80843 9.65833 1.7336C9.39368 1.57341 9.30761 1.22669 9.46609 0.959202C9.6246 0.691695 9.96762 0.604706 10.2323 0.7649C12.343 2.04243 13.6573 4.43464 13.7497 7.10922Z"
-							fill="#7C32F9">
-							</path>
-							<path d="M5.07418 3.48813C5.05986 3.50255 5.05067 3.51283 5.04274 3.52253C5.05275 3.51063 5.06323 3.49915 5.07418 3.48813ZM5.04718 3.5116C5.06942 3.47389 5.09233 3.42762 5.11297 3.37572C5.17007 3.23202 5.19742 3.07783 5.1835 2.92134C5.15857 2.64082 4.96281 2.15596 4.59001 1.50333C4.45615 1.26902 4.24804 1.14841 3.95064 1.13116C3.61406 1.11163 3.19424 1.2313 2.77026 1.47872C2.37429 1.70978 2.10736 2.0552 1.97097 2.49417C1.83573 2.9294 1.8335 3.4471 1.96673 3.98207C2.02241 4.20733 2.19547 5.00517 2.20725 5.05686C2.33204 5.60407 2.45891 6.05121 2.63936 6.54035C2.86436 7.15023 3.16132 7.78426 3.55839 8.4794C3.96974 9.1995 4.38222 9.80245 4.80855 10.3245C5.15421 10.7479 5.49382 11.1021 5.89478 11.4732C6.05725 11.6235 6.5746 12.0832 6.60057 12.1067C6.95554 12.4281 7.41393 12.6839 7.86577 12.8003C8.35064 12.9252 8.79354 12.8851 9.1628 12.6696C9.61195 12.4075 9.92876 12.1149 10.0779 11.8334C10.2123 11.5797 10.2102 11.3422 10.0516 11.0645C9.70435 10.4566 9.39678 10.0596 9.15394 9.88026C8.93911 9.72165 8.72182 9.65384 8.4821 9.66667C8.35891 9.6754 8.23301 9.69192 8.08691 9.71728C8.02774 9.72756 7.96763 9.73881 7.88758 9.7544L7.78687 9.77411C7.74549 9.78222 7.71498 9.78813 7.68496 9.79384C7.3734 9.85304 7.1693 9.8765 6.94875 9.8635C6.64355 9.84551 6.36754 9.75 6.11759 9.56168C6.10192 9.54987 6.08687 9.53724 6.0725 9.52384C5.58453 9.06843 5.14335 8.48702 4.74672 7.78145C4.35277 7.08066 4.07739 6.40914 3.92262 5.76562C3.91946 5.75246 3.91677 5.7392 3.91455 5.72585C3.86112 5.40458 3.91707 5.09593 4.06034 4.80188C4.16439 4.58836 4.3038 4.39771 4.49821 4.17899C4.53797 4.13429 4.57855 4.08996 4.63035 4.03434C4.63873 4.02533 4.72619 3.93177 4.75019 3.90584C4.88127 3.76429 4.94554 3.6834 4.96738 3.63856C4.98549 3.60141 5.00759 3.56638 5.03328 3.53411C5.03699 3.52846 5.04175 3.52079 5.04718 3.5116ZM7.47857 8.68415C7.50617 8.67891 7.53486 8.67334 7.57438 8.66561L7.62457 8.65576C7.64527 8.6517 7.66085 8.64866 7.67627 8.64567C7.76305 8.62876 7.82989 8.61625 7.89778 8.60447C8.07996 8.57284 8.24316 8.55151 8.40918 8.53995C8.41154 8.53979 8.41391 8.53964 8.41629 8.53951C8.91937 8.51103 9.39166 8.65747 9.81292 8.96851C10.2072 9.25959 10.6009 9.76777 11.0191 10.4999C11.3724 11.1185 11.3781 11.7711 11.0627 12.3665C10.8022 12.8582 10.336 13.2888 9.72136 13.6474C9.08133 14.0209 8.34116 14.088 7.58982 13.8944C6.95796 13.7316 6.34032 13.3869 5.85517 12.9477C5.83678 12.931 5.31288 12.4656 5.14039 12.3059C4.70338 11.9015 4.32833 11.5103 3.94695 11.0433C3.4807 10.4723 3.03292 9.81773 2.59092 9.04396C2.16313 8.29506 1.83957 7.60421 1.59263 6.93485C1.39331 6.3946 1.25355 5.90202 1.11865 5.31046C1.10366 5.24472 0.933904 4.4621 0.883136 4.25671C0.496962 2.7062 0.954199 1.23466 2.21168 0.500874C2.81258 0.150221 3.44237 -0.029293 4.01463 0.00390616C4.6753 0.042202 5.22844 0.362761 5.55747 0.938768C6.0049 1.72203 6.2532 2.33701 6.29618 2.82028C6.32706 3.1678 6.26868 3.49694 6.14962 3.79656C6.09066 3.94489 6.01464 4.08736 5.94291 4.18946C5.85997 4.34343 5.75033 4.47816 5.56585 4.6774C5.53969 4.70563 5.45069 4.80085 5.44391 4.80813C5.39751 4.85796 5.36228 4.89645 5.32921 4.93365C5.08558 5.20771 4.99793 5.37974 5.0141 5.52333C5.14409 6.05177 5.37809 6.61895 5.71803 7.22367C6.05336 7.82017 6.41649 8.30196 6.80535 8.67074C6.9314 8.7555 7.08259 8.75939 7.47857 8.68415ZM11.0698 7.13224C11.0806 7.44386 10.8394 7.70528 10.5311 7.71617C10.2228 7.72705 9.96412 7.48327 9.95335 7.17167C9.91088 5.94262 9.29005 4.83341 8.30051 4.15749C8.04491 3.9829 7.97773 3.63195 8.15047 3.37361C8.32321 3.11528 8.67043 3.04739 8.92603 3.22197C10.2085 4.09797 11.0147 5.53846 11.0698 7.13224ZM13.7497 7.10922C13.7604 7.42082 13.5192 7.68225 13.2109 7.69313C12.9026 7.70401 12.644 7.46023 12.6332 7.14863C12.5536 4.84619 11.4341 2.80843 9.65833 1.7336C9.39368 1.57341 9.30761 1.22669 9.46609 0.959202C9.6246 0.691695 9.96762 0.604706 10.2323 0.7649C12.343 2.04243 13.6573 4.43464 13.7497 7.10922Z"
-							fill="url(#paint0_linear_16933_36824)">
-							</path>
-							<defs>
-								<linearGradient id="paint0_linear_16933_36824" x1="0.75" y1="13.65" x2="13.839"
-								y2="1.49589" gradientUnits="userSpaceOnUse">
-									<stop stop-color="#6828D4">
-									</stop>
-									<stop offset="0.27261" stop-color="#7F33FF">
-									</stop>
-									<stop offset="0.794116" stop-color="#008DFF">
-									</stop>
-									<stop offset="1" stop-color="#3CB3FF">
-									</stop>
-								</linearGradient>
-							</defs>
-						</svg>
-						<span>
-							热线咨询
-						</span>
-					</button>
-					<button class="body-module__contactButton__d+uqY">
-						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-						class="body-module__contactButtonIcon__icJ-2">
-							<path d="M10.65 0C11.3396 0 12.0009 0.268181 12.4885 0.745546C12.9761 1.22291 13.25 1.87036 13.25 2.54545V11.4545C13.25 12.1296 12.9761 12.7771 12.4885 13.2545C12.0009 13.7318 11.3396 14 10.65 14H2.85C2.16044 14 1.49912 13.7318 1.01152 13.2545C0.523928 12.7771 0.25 12.1296 0.25 11.4545V2.54545C0.25 1.87036 0.523928 1.22291 1.01152 0.745546C1.49912 0.268181 2.16044 0 2.85 0L10.65 0ZM10.65 1.27273H2.85C2.50522 1.27273 2.17456 1.40682 1.93076 1.6455C1.68696 1.88418 1.55 2.20791 1.55 2.54545V11.4545C1.55 11.7921 1.68696 12.1158 1.93076 12.3545C2.17456 12.5932 2.50522 12.7273 2.85 12.7273H10.65C10.9948 12.7273 11.3254 12.5932 11.5692 12.3545C11.813 12.1158 11.95 11.7921 11.95 11.4545V2.54545C11.95 2.20791 11.813 1.88418 11.5692 1.6455C11.3254 1.40682 10.9948 1.27273 10.65 1.27273ZM8.7 7C8.87237 7.00002 9.03768 7.06708 9.15956 7.18642C9.28144 7.30576 9.3499 7.46761 9.3499 7.63636C9.3499 7.80512 9.28144 7.96697 9.15956 8.08631C9.03768 8.20565 8.87237 8.2727 8.7 8.27273H4.15C3.97763 8.2727 3.81232 8.20565 3.69044 8.08631C3.56856 7.96697 3.5001 7.80512 3.5001 7.63636C3.5001 7.46761 3.56856 7.30576 3.69044 7.18642C3.81232 7.06708 3.97763 7.00002 4.15 7H8.7ZM7.4 3.81818C7.57237 3.81821 7.73768 3.88526 7.85956 4.0046C7.98144 4.12394 8.0499 4.28579 8.0499 4.45455C8.0499 4.6233 7.98144 4.78515 7.85956 4.90449C7.73768 5.02383 7.57237 5.09088 7.4 5.09091H4.15C4.06463 5.09092 3.9801 5.07447 3.90123 5.0425C3.82235 5.01052 3.75069 4.96365 3.69032 4.90456C3.62995 4.84546 3.58206 4.77531 3.54939 4.69809C3.51672 4.62088 3.4999 4.53812 3.4999 4.45455C3.4999 4.37097 3.51672 4.28821 3.54939 4.211C3.58206 4.13378 3.62995 4.06363 3.69032 4.00454C3.75069 3.94544 3.82235 3.89857 3.90123 3.8666C3.9801 3.83462 4.06463 3.81817 4.15 3.81818H7.4Z"
-							fill="#232B37">
-							</path>
-						</svg>
-						<span>
-							联系顾问
+	<div class="body-module__answerButtonContainer__+fliE">
+		<div class="awsui_root_18582_whr0e_145 awsui_vertical_18582_whr0e_192 awsui_vertical-xs_18582_whr0e_201">
+			<div class="awsui_child_18582_whr0e_149">
+				<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot">
+					<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
+					data-analytics-funnel-value="button:r6:" type="button" data-analytics-performance-mark="0-1757915064527-8405">
+						<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
+							<span>
+								角膜塑形镜的一般问题
+							</span>
+							<span class="body-module__choiceButtonArrowIcon__61Wzs">
+								<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 0L3.67418 0.883883L6.98223 4.19194H0.366117V5.44194H6.98223L3.67418 8.75L4.55806 9.63388L9.375 4.81694L4.55806 0Z"
+									fill="currentColor">
+									</path>
+								</svg>
+							</span>
 						</span>
 					</button>
 				</div>
 			</div>
+			<div class="awsui_child_18582_whr0e_149">
+				<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot">
+					<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
+					data-analytics-funnel-value="button:r8:" type="button" data-analytics-performance-mark="1-1757915064528-7384">
+						<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
+							<span>
+								角膜塑形镜的使用问题
+							</span>
+							<span class="body-module__choiceButtonArrowIcon__61Wzs">
+								<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 0L3.67418 0.883883L6.98223 4.19194H0.366117V5.44194H6.98223L3.67418 8.75L4.55806 9.63388L9.375 4.81694L4.55806 0Z"
+									fill="currentColor">
+									</path>
+								</svg>
+							</span>
+						</span>
+					</button>
+				</div>
+			</div>
+			<div class="awsui_child_18582_whr0e_149">
+				<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot">
+					<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
+					data-analytics-funnel-value="button:ra:" type="button" data-analytics-performance-mark="2-1757915064528-574">
+						<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
+							<span>
+								角膜塑形镜的治疗问题
+							</span>
+							<span class="body-module__choiceButtonArrowIcon__61Wzs">
+								<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 0L3.67418 0.883883L6.98223 4.19194H0.366117V5.44194H6.98223L3.67418 8.75L4.55806 9.63388L9.375 4.81694L4.55806 0Z"
+									fill="currentColor">
+									</path>
+								</svg>
+							</span>
+						</span>
+					</button>
+				</div>
+			</div>
+			<div class="awsui_child_18582_whr0e_149">
+				<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot">
+					<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
+					data-analytics-funnel-value="button:rc:" type="button" data-analytics-performance-mark="3-1757915064529-5505">
+						<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
+							<span>
+								关于处方
+							</span>
+							<span class="body-module__choiceButtonArrowIcon__61Wzs">
+								<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 0L3.67418 0.883883L6.98223 4.19194H0.366117V5.44194H6.98223L3.67418 8.75L4.55806 9.63388L9.375 4.81694L4.55806 0Z"
+									fill="currentColor">
+									</path>
+								</svg>
+							</span>
+						</span>
+					</button>
+				</div>
+			</div>
+			<div style="margin-top: 20px;" class="awsui_child_18582_whr0e_149">
+				<div class="body-module__answerButton__wetaB body-module__welcomeMessageButton__f41ot body-module__liveChatButton__qnwb7">
+					<button class="awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206"
+					data-analytics-funnel-value="button:re:" type="button" data-analytics-performance-mark="4-1757915064529-7808">
+						<span class="awsui_content_vjswe_1qz6m_153 awsui_label_1f1d4_ocied_5">
+							<span>
+								我想转人工
+							</span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+	</div>
+</div>
+</div>
 
-			<div style="position: relative;">
-				<textarea 
-						  style="border-radius:30px;height:50px;									
-									scrollbar-width: none;
-									-ms-overflow-style: none;
-									width: 100%;
-									max-height: 200px;
-									resize: none;
-									outline: none;
-									display: block;
-									font-size: 14px;
-									font-weight: 400;
-									font-style: normal;
-									line-height: 22px;
-									align-items: center;
-									box-sizing: border-box;
-									color: var(--color-text-body-default-hiigui, #16191f);
-									border: 2px solid rgba(0,0,0,0);
-									background-image: linear-gradient(var(--color-background-input-default-bh53wr, #ffffff), var(--color-background-input-default-bh53wr, #ffffff)),linear-gradient(45deg, #6828d4 1.25%, #7f33ff 26.81%, #008dff 75.7%, #3cb3ff 95%);
-									background-origin: border-box;
-									background-clip: padding-box,border-box;
-									padding: var(--space-static-s-pwj45y, 12px) 56px var(--space-static-s-pwj45y, 12px) var(--space-static-m-rufxr5, 16px);
-									background-color: var(--color-background-input-default-bh53wr, #ffffff);
-									width: 95%; margin: 0 auto;"
-					 placeholder="请输入您的问题" >
-				</textarea>
-				<button id="chat-send-message-button" 
-						style="
-							height: 37px;
-							cursor: pointer;
-							position: absolute;
-							right: 13px;
-							top: 2px;
-							padding: var(--space-static-xxs-9qxzo2, 4px);
-							border: 0;
-							background: none;
-							box-shadow: none;">
-					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
-					class="send-icon" style="transition: transform 0.15s; cursor: pointer; transform: scale(1);">
-						<rect width="40" height="40" rx="20" fill="url(#paint0_linear_16660_23233)">
-						</rect>
-						<path d="M27.4115 12.5859L21.8698 28.4193L18.7031 21.2943L11.5781 18.1276L27.4115 12.5859Z"
-						stroke="white" stroke-width="1.25" stroke-linejoin="round">
+		</div>
+
+		<div style="margin-bottom: 10px;background-color: #FFFFFF;" class="body-module__contactBoxContainer__I8Ynl" id="chat-contact-box-container">
+			<div class="body-module__contactAreaContainer__LVi2t" id="chat-contact-area-container">
+				<button class="body-module__contactButton__d+uqY">
+					<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+					class="body-module__contactButtonIcon__icJ-2">
+						<path d="M5.07418 3.48813C5.05986 3.50255 5.05067 3.51283 5.04274 3.52253C5.05275 3.51063 5.06323 3.49915 5.07418 3.48813ZM5.04718 3.5116C5.06942 3.47389 5.09233 3.42762 5.11297 3.37572C5.17007 3.23202 5.19742 3.07783 5.1835 2.92134C5.15857 2.64082 4.96281 2.15596 4.59001 1.50333C4.45615 1.26902 4.24804 1.14841 3.95064 1.13116C3.61406 1.11163 3.19424 1.2313 2.77026 1.47872C2.37429 1.70978 2.10736 2.0552 1.97097 2.49417C1.83573 2.9294 1.8335 3.4471 1.96673 3.98207C2.02241 4.20733 2.19547 5.00517 2.20725 5.05686C2.33204 5.60407 2.45891 6.05121 2.63936 6.54035C2.86436 7.15023 3.16132 7.78426 3.55839 8.4794C3.96974 9.1995 4.38222 9.80245 4.80855 10.3245C5.15421 10.7479 5.49382 11.1021 5.89478 11.4732C6.05725 11.6235 6.5746 12.0832 6.60057 12.1067C6.95554 12.4281 7.41393 12.6839 7.86577 12.8003C8.35064 12.9252 8.79354 12.8851 9.1628 12.6696C9.61195 12.4075 9.92876 12.1149 10.0779 11.8334C10.2123 11.5797 10.2102 11.3422 10.0516 11.0645C9.70435 10.4566 9.39678 10.0596 9.15394 9.88026C8.93911 9.72165 8.72182 9.65384 8.4821 9.66667C8.35891 9.6754 8.23301 9.69192 8.08691 9.71728C8.02774 9.72756 7.96763 9.73881 7.88758 9.7544L7.78687 9.77411C7.74549 9.78222 7.71498 9.78813 7.68496 9.79384C7.3734 9.85304 7.1693 9.8765 6.94875 9.8635C6.64355 9.84551 6.36754 9.75 6.11759 9.56168C6.10192 9.54987 6.08687 9.53724 6.0725 9.52384C5.58453 9.06843 5.14335 8.48702 4.74672 7.78145C4.35277 7.08066 4.07739 6.40914 3.92262 5.76562C3.91946 5.75246 3.91677 5.7392 3.91455 5.72585C3.86112 5.40458 3.91707 5.09593 4.06034 4.80188C4.16439 4.58836 4.3038 4.39771 4.49821 4.17899C4.53797 4.13429 4.57855 4.08996 4.63035 4.03434C4.63873 4.02533 4.72619 3.93177 4.75019 3.90584C4.88127 3.76429 4.94554 3.6834 4.96738 3.63856C4.98549 3.60141 5.00759 3.56638 5.03328 3.53411C5.03699 3.52846 5.04175 3.52079 5.04718 3.5116ZM7.47857 8.68415C7.50617 8.67891 7.53486 8.67334 7.57438 8.66561L7.62457 8.65576C7.64527 8.6517 7.66085 8.64866 7.67627 8.64567C7.76305 8.62876 7.82989 8.61625 7.89778 8.60447C8.07996 8.57284 8.24316 8.55151 8.40918 8.53995C8.41154 8.53979 8.41391 8.53964 8.41629 8.53951C8.91937 8.51103 9.39166 8.65747 9.81292 8.96851C10.2072 9.25959 10.6009 9.76777 11.0191 10.4999C11.3724 11.1185 11.3781 11.7711 11.0627 12.3665C10.8022 12.8582 10.336 13.2888 9.72136 13.6474C9.08133 14.0209 8.34116 14.088 7.58982 13.8944C6.95796 13.7316 6.34032 13.3869 5.85517 12.9477C5.83678 12.931 5.31288 12.4656 5.14039 12.3059C4.70338 11.9015 4.32833 11.5103 3.94695 11.0433C3.4807 10.4723 3.03292 9.81773 2.59092 9.04396C2.16313 8.29506 1.83957 7.60421 1.59263 6.93485C1.39331 6.3946 1.25355 5.90202 1.11865 5.31046C1.10366 5.24472 0.933904 4.4621 0.883136 4.25671C0.496962 2.7062 0.954199 1.23466 2.21168 0.500874C2.81258 0.150221 3.44237 -0.029293 4.01463 0.00390616C4.6753 0.042202 5.22844 0.362761 5.55747 0.938768C6.0049 1.72203 6.2532 2.33701 6.29618 2.82028C6.32706 3.1678 6.26868 3.49694 6.14962 3.79656C6.09066 3.94489 6.01464 4.08736 5.94291 4.18946C5.85997 4.34343 5.75033 4.47816 5.56585 4.6774C5.53969 4.70563 5.45069 4.80085 5.44391 4.80813C5.39751 4.85796 5.36228 4.89645 5.32921 4.93365C5.08558 5.20771 4.99793 5.37974 5.0141 5.52333C5.14409 6.05177 5.37809 6.61895 5.71803 7.22367C6.05336 7.82017 6.41649 8.30196 6.80535 8.67074C6.9314 8.7555 7.08259 8.75939 7.47857 8.68415ZM11.0698 7.13224C11.0806 7.44386 10.8394 7.70528 10.5311 7.71617C10.2228 7.72705 9.96412 7.48327 9.95335 7.17167C9.91088 5.94262 9.29005 4.83341 8.30051 4.15749C8.04491 3.9829 7.97773 3.63195 8.15047 3.37361C8.32321 3.11528 8.67043 3.04739 8.92603 3.22197C10.2085 4.09797 11.0147 5.53846 11.0698 7.13224ZM13.7497 7.10922C13.7604 7.42082 13.5192 7.68225 13.2109 7.69313C12.9026 7.70401 12.644 7.46023 12.6332 7.14863C12.5536 4.84619 11.4341 2.80843 9.65833 1.7336C9.39368 1.57341 9.30761 1.22669 9.46609 0.959202C9.6246 0.691695 9.96762 0.604706 10.2323 0.7649C12.343 2.04243 13.6573 4.43464 13.7497 7.10922Z"
+						fill="#7C32F9">
 						</path>
-						<path d="M27.4115 12.5859L18.7031 21.2943" stroke="white" stroke-width="1.25"
-						stroke-linecap="round" stroke-linejoin="round">
+						<path d="M5.07418 3.48813C5.05986 3.50255 5.05067 3.51283 5.04274 3.52253C5.05275 3.51063 5.06323 3.49915 5.07418 3.48813ZM5.04718 3.5116C5.06942 3.47389 5.09233 3.42762 5.11297 3.37572C5.17007 3.23202 5.19742 3.07783 5.1835 2.92134C5.15857 2.64082 4.96281 2.15596 4.59001 1.50333C4.45615 1.26902 4.24804 1.14841 3.95064 1.13116C3.61406 1.11163 3.19424 1.2313 2.77026 1.47872C2.37429 1.70978 2.10736 2.0552 1.97097 2.49417C1.83573 2.9294 1.8335 3.4471 1.96673 3.98207C2.02241 4.20733 2.19547 5.00517 2.20725 5.05686C2.33204 5.60407 2.45891 6.05121 2.63936 6.54035C2.86436 7.15023 3.16132 7.78426 3.55839 8.4794C3.96974 9.1995 4.38222 9.80245 4.80855 10.3245C5.15421 10.7479 5.49382 11.1021 5.89478 11.4732C6.05725 11.6235 6.5746 12.0832 6.60057 12.1067C6.95554 12.4281 7.41393 12.6839 7.86577 12.8003C8.35064 12.9252 8.79354 12.8851 9.1628 12.6696C9.61195 12.4075 9.92876 12.1149 10.0779 11.8334C10.2123 11.5797 10.2102 11.3422 10.0516 11.0645C9.70435 10.4566 9.39678 10.0596 9.15394 9.88026C8.93911 9.72165 8.72182 9.65384 8.4821 9.66667C8.35891 9.6754 8.23301 9.69192 8.08691 9.71728C8.02774 9.72756 7.96763 9.73881 7.88758 9.7544L7.78687 9.77411C7.74549 9.78222 7.71498 9.78813 7.68496 9.79384C7.3734 9.85304 7.1693 9.8765 6.94875 9.8635C6.64355 9.84551 6.36754 9.75 6.11759 9.56168C6.10192 9.54987 6.08687 9.53724 6.0725 9.52384C5.58453 9.06843 5.14335 8.48702 4.74672 7.78145C4.35277 7.08066 4.07739 6.40914 3.92262 5.76562C3.91946 5.75246 3.91677 5.7392 3.91455 5.72585C3.86112 5.40458 3.91707 5.09593 4.06034 4.80188C4.16439 4.58836 4.3038 4.39771 4.49821 4.17899C4.53797 4.13429 4.57855 4.08996 4.63035 4.03434C4.63873 4.02533 4.72619 3.93177 4.75019 3.90584C4.88127 3.76429 4.94554 3.6834 4.96738 3.63856C4.98549 3.60141 5.00759 3.56638 5.03328 3.53411C5.03699 3.52846 5.04175 3.52079 5.04718 3.5116ZM7.47857 8.68415C7.50617 8.67891 7.53486 8.67334 7.57438 8.66561L7.62457 8.65576C7.64527 8.6517 7.66085 8.64866 7.67627 8.64567C7.76305 8.62876 7.82989 8.61625 7.89778 8.60447C8.07996 8.57284 8.24316 8.55151 8.40918 8.53995C8.41154 8.53979 8.41391 8.53964 8.41629 8.53951C8.91937 8.51103 9.39166 8.65747 9.81292 8.96851C10.2072 9.25959 10.6009 9.76777 11.0191 10.4999C11.3724 11.1185 11.3781 11.7711 11.0627 12.3665C10.8022 12.8582 10.336 13.2888 9.72136 13.6474C9.08133 14.0209 8.34116 14.088 7.58982 13.8944C6.95796 13.7316 6.34032 13.3869 5.85517 12.9477C5.83678 12.931 5.31288 12.4656 5.14039 12.3059C4.70338 11.9015 4.32833 11.5103 3.94695 11.0433C3.4807 10.4723 3.03292 9.81773 2.59092 9.04396C2.16313 8.29506 1.83957 7.60421 1.59263 6.93485C1.39331 6.3946 1.25355 5.90202 1.11865 5.31046C1.10366 5.24472 0.933904 4.4621 0.883136 4.25671C0.496962 2.7062 0.954199 1.23466 2.21168 0.500874C2.81258 0.150221 3.44237 -0.029293 4.01463 0.00390616C4.6753 0.042202 5.22844 0.362761 5.55747 0.938768C6.0049 1.72203 6.2532 2.33701 6.29618 2.82028C6.32706 3.1678 6.26868 3.49694 6.14962 3.79656C6.09066 3.94489 6.01464 4.08736 5.94291 4.18946C5.85997 4.34343 5.75033 4.47816 5.56585 4.6774C5.53969 4.70563 5.45069 4.80085 5.44391 4.80813C5.39751 4.85796 5.36228 4.89645 5.32921 4.93365C5.08558 5.20771 4.99793 5.37974 5.0141 5.52333C5.14409 6.05177 5.37809 6.61895 5.71803 7.22367C6.05336 7.82017 6.41649 8.30196 6.80535 8.67074C6.9314 8.7555 7.08259 8.75939 7.47857 8.68415ZM11.0698 7.13224C11.0806 7.44386 10.8394 7.70528 10.5311 7.71617C10.2228 7.72705 9.96412 7.48327 9.95335 7.17167C9.91088 5.94262 9.29005 4.83341 8.30051 4.15749C8.04491 3.9829 7.97773 3.63195 8.15047 3.37361C8.32321 3.11528 8.67043 3.04739 8.92603 3.22197C10.2085 4.09797 11.0147 5.53846 11.0698 7.13224ZM13.7497 7.10922C13.7604 7.42082 13.5192 7.68225 13.2109 7.69313C12.9026 7.70401 12.644 7.46023 12.6332 7.14863C12.5536 4.84619 11.4341 2.80843 9.65833 1.7336C9.39368 1.57341 9.30761 1.22669 9.46609 0.959202C9.6246 0.691695 9.96762 0.604706 10.2323 0.7649C12.343 2.04243 13.6573 4.43464 13.7497 7.10922Z"
+						fill="url(#paint0_linear_16933_36824)">
 						</path>
 						<defs>
-							<linearGradient id="paint0_linear_16660_23233" x1="1.39698e-07" y1="39"
-							x2="37.5" y2="1.5" gradientUnits="userSpaceOnUse">
+							<linearGradient id="paint0_linear_16933_36824" x1="0.75" y1="13.65" x2="13.839"
+							y2="1.49589" gradientUnits="userSpaceOnUse">
 								<stop stop-color="#6828D4">
 								</stop>
 								<stop offset="0.27261" stop-color="#7F33FF">
@@ -3307,12 +3192,165 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
 							</linearGradient>
 						</defs>
 					</svg>
+					<span>
+						热线咨询
+					</span>
+				</button>
+				<button class="body-module__contactButton__d+uqY">
+					<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+					class="body-module__contactButtonIcon__icJ-2">
+						<path d="M10.65 0C11.3396 0 12.0009 0.268181 12.4885 0.745546C12.9761 1.22291 13.25 1.87036 13.25 2.54545V11.4545C13.25 12.1296 12.9761 12.7771 12.4885 13.2545C12.0009 13.7318 11.3396 14 10.65 14H2.85C2.16044 14 1.49912 13.7318 1.01152 13.2545C0.523928 12.7771 0.25 12.1296 0.25 11.4545V2.54545C0.25 1.87036 0.523928 1.22291 1.01152 0.745546C1.49912 0.268181 2.16044 0 2.85 0L10.65 0ZM10.65 1.27273H2.85C2.50522 1.27273 2.17456 1.40682 1.93076 1.6455C1.68696 1.88418 1.55 2.20791 1.55 2.54545V11.4545C1.55 11.7921 1.68696 12.1158 1.93076 12.3545C2.17456 12.5932 2.50522 12.7273 2.85 12.7273H10.65C10.9948 12.7273 11.3254 12.5932 11.5692 12.3545C11.813 12.1158 11.95 11.7921 11.95 11.4545V2.54545C11.95 2.20791 11.813 1.88418 11.5692 1.6455C11.3254 1.40682 10.9948 1.27273 10.65 1.27273ZM8.7 7C8.87237 7.00002 9.03768 7.06708 9.15956 7.18642C9.28144 7.30576 9.3499 7.46761 9.3499 7.63636C9.3499 7.80512 9.28144 7.96697 9.15956 8.08631C9.03768 8.20565 8.87237 8.2727 8.7 8.27273H4.15C3.97763 8.2727 3.81232 8.20565 3.69044 8.08631C3.56856 7.96697 3.5001 7.80512 3.5001 7.63636C3.5001 7.46761 3.56856 7.30576 3.69044 7.18642C3.81232 7.06708 3.97763 7.00002 4.15 7H8.7ZM7.4 3.81818C7.57237 3.81821 7.73768 3.88526 7.85956 4.0046C7.98144 4.12394 8.0499 4.28579 8.0499 4.45455C8.0499 4.6233 7.98144 4.78515 7.85956 4.90449C7.73768 5.02383 7.57237 5.09088 7.4 5.09091H4.15C4.06463 5.09092 3.9801 5.07447 3.90123 5.0425C3.82235 5.01052 3.75069 4.96365 3.69032 4.90456C3.62995 4.84546 3.58206 4.77531 3.54939 4.69809C3.51672 4.62088 3.4999 4.53812 3.4999 4.45455C3.4999 4.37097 3.51672 4.28821 3.54939 4.211C3.58206 4.13378 3.62995 4.06363 3.69032 4.00454C3.75069 3.94544 3.82235 3.89857 3.90123 3.8666C3.9801 3.83462 4.06463 3.81817 4.15 3.81818H7.4Z"
+						fill="#232B37">
+						</path>
+					</svg>
+					<span>
+						联系顾问
+					</span>
 				</button>
 			</div>
 		</div>
 
-	<script id="__NEXT_DATA__" type="application/json">
-		{"props":{"pageProps":"","__N_SSG":true},"page":"/[...url]","query":{"url":["zh-hk"]},"buildId":"OhFPwoFy9QlzpWc-IzKk_","isFallback":false,"gsp":true,"scriptLoader":[]}
+		<div style="position: relative;">
+			<textarea 
+						style="border-radius:30px;height:50px;									
+								scrollbar-width: none;
+								-ms-overflow-style: none;
+								width: 100%;
+								max-height: 200px;
+								resize: none;
+								outline: none;
+								display: block;
+								font-size: 14px;
+								font-weight: 400;
+								font-style: normal;
+								line-height: 22px;
+								align-items: center;
+								box-sizing: border-box;
+								color: var(--color-text-body-default-hiigui, #16191f);
+								border: 2px solid rgba(0,0,0,0);
+								background-image: linear-gradient(var(--color-background-input-default-bh53wr, #ffffff), var(--color-background-input-default-bh53wr, #ffffff)),linear-gradient(45deg, #6828d4 1.25%, #7f33ff 26.81%, #008dff 75.7%, #3cb3ff 95%);
+								background-origin: border-box;
+								background-clip: padding-box,border-box;
+								padding: var(--space-static-s-pwj45y, 12px) 56px var(--space-static-s-pwj45y, 12px) var(--space-static-m-rufxr5, 16px);
+								background-color: var(--color-background-input-default-bh53wr, #ffffff);
+								width: 95%; margin: 0 auto;"
+					placeholder="请输入您的问题" >
+			</textarea>
+			<button id="chat-send-message-button" 
+					style="
+						height: 37px;
+						cursor: pointer;
+						position: absolute;
+						right: 13px;
+						top: 2px;
+						padding: var(--space-static-xxs-9qxzo2, 4px);
+						border: 0;
+						background: none;
+						box-shadow: none;">
+				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+				class="send-icon" style="transition: transform 0.15s; cursor: pointer; transform: scale(1);">
+					<rect width="40" height="40" rx="20" fill="url(#paint0_linear_16660_23233)">
+					</rect>
+					<path d="M27.4115 12.5859L21.8698 28.4193L18.7031 21.2943L11.5781 18.1276L27.4115 12.5859Z"
+					stroke="white" stroke-width="1.25" stroke-linejoin="round">
+					</path>
+					<path d="M27.4115 12.5859L18.7031 21.2943" stroke="white" stroke-width="1.25"
+					stroke-linecap="round" stroke-linejoin="round">
+					</path>
+					<defs>
+						<linearGradient id="paint0_linear_16660_23233" x1="1.39698e-07" y1="39"
+						x2="37.5" y2="1.5" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#6828D4">
+							</stop>
+							<stop offset="0.27261" stop-color="#7F33FF">
+							</stop>
+							<stop offset="0.794116" stop-color="#008DFF">
+							</stop>
+							<stop offset="1" stop-color="#3CB3FF">
+							</stop>
+						</linearGradient>
+					</defs>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<script>
+		let slide_count = 0;
+		const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+		const prevBtn = document.querySelector(".swiper-button-prev");
+    	const nextBtn = document.querySelector(".swiper-button-next");
+		const slides = document.querySelectorAll('.swiper-slide');
+		const swiperWitdh = document.getElementById('swiper-wrapper').offsetWidth;
+
+		
+		function showSlide(index) {
+			bullets.forEach((s, i) => {
+				s.classList.toggle("swiper-pagination-bullet-active", i === index);
+			});
+			slides.forEach((s, i) => {
+				if (i === index) {
+					s.style = `width: ${swiperWitdh}px; transform: translate3d(${-swiperWitdh * index}px, 0, 0);`;
+				}
+				s.classList.toggle("active", i === index);
+			});
+    	}
+		prevBtn.onclick = () => {
+			slide_count = (slide_count - 1 + bullets.length) % bullets.length;
+			showSlide(slide_count);
+		};
+
+		nextBtn.onclick = () => {
+			slide_count = (slide_count + 1) % bullets.length;
+			showSlide(slide_count);
+		};
+		// 自动轮播
+		setInterval(() => {
+			slide_count = (slide_count + 1) % bullets.length; // 循环回到0
+			showSlide(slide_count);
+		}, 5000);
+
+		const langBtn = document.getElementById('langBtn');
+		langBtn.addEventListener('click', function(e) {
+			e.stopPropagation(); // 阻止事件冒泡，防止立即被 document 隐藏
+			const popup = document.getElementById('langMenu')
+			if (popup.style.display === 'block') {
+				popup.style.display = 'none';
+			} else {
+				popup.style.display = 'block';
+			}
+		});
+
+		const langBtns = document.querySelectorAll(".lang-btn");
+		langBtns.forEach(btn => {
+			btn.onclick = function() {
+				document.getElementById('languageDisplay').innerHTML= this.value;
+				 document.querySelectorAll('.lang-choose').forEach(btn => {
+					btn.classList.remove("active");
+				 });
+				const choose = this.querySelector('.lang-choose');
+				choose.classList.add("active");
+			};
+		});
+		// 点击页面任意其他位置：隐藏 div
+		document.addEventListener('click', function() {
+			document.getElementById('langMenu').style.display = 'none';
+		});
+		// // 切换幻灯片函数
+		// function showSlide(index) {
+		// 	// 确保索引在有效范围内
+		// 	if (index < 0) index = slides.length - 1;
+		// 	if (index >= slides.length) index = 0;
+
+		// 	currentSlide = index;
+
+		// 	// 隐藏所有图片和点
+		// 	slides.forEach(slide => slide.classList.remove('active'));
+		// 	dots.forEach(dot => dot.classList.remove('active'));
+
+		// 	// 显示当前图片和点
+		// 	slides[currentSlide].classList.add('active');
+		// 	dots[currentSlide].classList.add('active');
+		// }
 	</script>
 
 
