@@ -703,6 +703,26 @@ data-styled.g2260[id="sc-global-iEDSUG3"]{content:"sc-global-iEDSUG3,"}/*!sc*/
     color: rgb(255, 255, 255);
     margin-bottom: 16px;
 }
+
+.lang-btn {
+	margin: 5px;
+	display: inline-flex;
+	border: 0;
+	padding: 8px;
+	border-radius: 8px;
+	font-size: 16px;
+	background-color: #0000;
+	cursor: pointer;
+}
+.lang-btn:hover {
+    background-color: #178197;
+	color: #FFFFFF;
+}
+
+.lang-choose.active {
+	display: block !important;
+	color: #FFFFFF !important;
+}
 </style>
 </head>
 <body data-pageref="blt05bd63acf9b9184c" data-contenttype="basic_page"
@@ -721,14 +741,89 @@ data-locale="zh-hk" class="nunito-sans">
 
 								<div class="sc-39e33ea1-3 bONhBW">
 									<div class="sc-39e33ea1-4 krnCxo">
-										<div data-test-id="accessibility-icon" tabindex="-1" aria-label="前往我們的無障礙政策。" class="sc-39e33ea1-5 jOkJue">
-											<a class="sc-4cfe67d8-0 ibQjVD sc-89e4a8ca-2 ixBCu sc-39e33ea1-6 iPRFts" data-analytics-type="link_click" data-test-id="button" href="" role="link" tabindex="0" target="_self" title="" variant="tertiary" data-analytics-category="accessibility" data-component-id="button" aria-label="Accessibility button in navigation bar">
+										<div  id="langBtn" style="position: relative;"  data-test-id="accessibility-icon" tabindex="-1" aria-label="" class="sc-39e33ea1-5 jOkJue">
+											<a class="sc-4cfe67d8-0 ibQjVD sc-89e4a8ca-2 ixBCu sc-39e33ea1-6 iPRFts" data-analytics-type="link_click" data-test-id="button" href="javascript:void(0)" role="link" tabindex="0" target="_self" title="" variant="tertiary" data-analytics-category="accessibility" data-component-id="button" aria-label="Accessibility button in navigation bar">
 												<label class="sc-c2ede849-2 bQCzI"></label>
 												<div class="sc-89e4a8ca-1 iCiHNx" style="display: flex;align-items: center;">
-													<i class="sc-96e811ea-0 ghKEwI icon utility_accessibility" data-test-id="undefined-icon"></i>&nbsp;
-													<span>中文（简体）</span>
+													<svg  width="30px" height="30px" viewBox="0 0 128 128" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+														<style type="text/css">
+															.st0{display:none;}
+															.st1{display:inline;}
+															.st2{fill:none;stroke:#0F005B;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+															.iCiHNx:hover .st2 {fill:none;stroke:#FFFFFF;}
+														</style>
+														<g class="st0" id="Layer_1"/>
+														<g id="Layer_2">
+														<ellipse class="st2" cx="64" cy="64" rx="18.9" ry="44.3"/>
+														<line class="st2" x1="22.7" x2="105.3" y1="49.2" y2="49.2"/>
+														<line class="st2" x1="92.5" x2="22.7" y1="78.8" y2="78.8"/>
+														<circle class="st2" cx="64" cy="64" r="44.3"/>
+														</g>
+													</svg>&nbsp;
+													<span id="languageDisplay" style="width:100px;">中文（简体）</span>
 												</div>
 											</a>
+											<!--国际化 -->
+											<div id="langMenu" style="position: absolute;background-color: #FFFFFF; user-select: auto; width: 150px;box-shadow:0px 0px 8px rgba(0,0,0,.12);border-radius:2%;
+															display: none; top: 50px;  cursor: auto; z-index: 100;
+															pointer-events: auto;  box-sizing: border-box; flex-shrink: 0;">
+												<ul style="background-color: #fafafa; display: flex; flex-direction: column;">
+													<button class="lang-btn"  value="日本語"
+														aria-selected="true" aria-disabled="false" tabindex="0" id="floating-ui-bgen13-ja-JP"
+														role="option" data-rg-theme="orange" data-rg-mode="dark">
+															<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 bodytext_module_size1__438b4936">
+																日本語
+															</span>
+															<div class="lang-choose" style="margin-inline-start:auto;display: none;">
+																<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 listItem_module_endIcon__4a93b8da bodytext_module_size1__438b4936">
+																	<span class="icon_module_icon__7e6be9b9 icon_module_legacyIcon__7e6be9b9 icon_module_sizeS__7e6be9b9">
+																		<svg style="width: 16px;height: 16px;" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M7.37999 15.23C7.14999 15.23 6.91999 15.15 6.73999 15L0.73999 10L2.01999 8.46001L7.07999 12.68L13.5 0.76001L15.26 1.71001L8.25999 14.71C8.11999 14.97 7.85999 15.16 7.56999 15.22C7.50999 15.23 7.43999 15.24 7.37999 15.24V15.23Z"
+																			data-fill="true">
+																			</path>
+																		</svg>
+																	</span>
+																</span>
+															</div>
+													</button>
+													<button  class="lang-btn"  value="中文 (简体)" aria-selected="false" aria-disabled="false" tabindex="-1" id="floating-ui-bgen13-zh-CN"
+														class="listItem_module_listItem__4a93b8da listItem_module_button__4a93b8da"
+														role="option" data-rg-theme="orange" data-rg-mode="light">
+														<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 bodytext_module_size1__438b4936">
+															中文 (简体)
+														</span>
+														<div class="lang-choose active" style="margin-inline-start:auto;display: none;">
+																<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 listItem_module_endIcon__4a93b8da bodytext_module_size1__438b4936">
+																	<span class="icon_module_icon__7e6be9b9 icon_module_legacyIcon__7e6be9b9 icon_module_sizeS__7e6be9b9">
+																		<svg style="width: 16px;height: 16px;" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M7.37999 15.23C7.14999 15.23 6.91999 15.15 6.73999 15L0.73999 10L2.01999 8.46001L7.07999 12.68L13.5 0.76001L15.26 1.71001L8.25999 14.71C8.11999 14.97 7.85999 15.16 7.56999 15.22C7.50999 15.23 7.43999 15.24 7.37999 15.24V15.23Z"
+																			data-fill="true">
+																			</path>
+																		</svg>
+																	</span>
+																</span>
+														</div>
+													</button>
+													<button  class="lang-btn" value="English" aria-selected="false" aria-disabled="false" tabindex="-1" id="floating-ui-bgen13-zh-CN"
+														class="listItem_module_listItem__4a93b8da listItem_module_button__4a93b8da"
+														role="option" data-rg-theme="orange" data-rg-mode="light">
+														<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 bodytext_module_size1__438b4936">
+															English
+														</span>
+														<div class="lang-choose" style="margin-inline-start:auto;display: none;">
+																<span data-rg-n="BodyText" class="basetext_module_text__d779114e bodytext_module_body__438b4936 listItem_module_endIcon__4a93b8da bodytext_module_size1__438b4936">
+																	<span class="icon_module_icon__7e6be9b9 icon_module_legacyIcon__7e6be9b9 icon_module_sizeS__7e6be9b9">
+																		<svg style="width: 16px;height: 16px;" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+																			<path d="M7.37999 15.23C7.14999 15.23 6.91999 15.15 6.73999 15L0.73999 10L2.01999 8.46001L7.07999 12.68L13.5 0.76001L15.26 1.71001L8.25999 14.71C8.11999 14.97 7.85999 15.16 7.56999 15.22C7.50999 15.23 7.43999 15.24 7.37999 15.24V15.23Z"
+																			data-fill="true">
+																			</path>
+																		</svg>
+																	</span>
+																</span>
+														</div>
+													</button>
+												</ul>
+											</div>
 										</div>
 										<!-- <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="vt-locales-btn-icon" data-v-849d921a="">
 											<path d="M0 0h24v24H0z" fill="none"></path><path d=" M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z " class="css-c4d79v"></path>
@@ -1608,7 +1703,33 @@ data-locale="zh-hk" class="nunito-sans">
 			@media print{.css-depviu{position:absolute!important;}}
 		</style>
 	</div>
-	<script data-cfasync="false" src="static/js/email-decode.min.js">
+	<script>
+		const langBtn = document.getElementById('langBtn');
+		langBtn.addEventListener('click', function(e) {
+			e.stopPropagation(); // 阻止事件冒泡，防止立即被 document 隐藏
+			const popup = document.getElementById('langMenu')
+			if (popup.style.display === 'block') {
+				popup.style.display = 'none';
+			} else {
+				popup.style.display = 'block';
+			}
+		});
+
+		const langBtns = document.querySelectorAll(".lang-btn");
+		langBtns.forEach(btn => {
+			btn.onclick = function() {
+				document.getElementById('languageDisplay').innerHTML= this.value;
+				 document.querySelectorAll('.lang-choose').forEach(btn => {
+					btn.classList.remove("active");
+				 });
+				const choose = this.querySelector('.lang-choose');
+				choose.classList.add("active");
+			};
+		});
+		// 点击页面任意其他位置：隐藏 div
+		document.addEventListener('click', function() {
+			document.getElementById('langMenu').style.display = 'none';
+		});
 	</script>
 	<!-- <script id="__NEXT_DATA__" type="application/json">
 		{
