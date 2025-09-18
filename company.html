@@ -979,6 +979,26 @@ data-styled.g2262[id="sc-global-iEDSUG4"]{content:"sc-global-iEDSUG4,"}/*!sc*/
     color: rgb(255, 255, 255);
     margin-bottom: 16px;
 }
+
+.lang-btn {
+	margin: 5px;
+	display: inline-flex;
+	border: 0;
+	padding: 8px;
+	border-radius: 8px;
+	font-size: 16px;
+	background-color: #0000;
+	cursor: pointer;
+}
+.lang-btn:hover {
+    background-color: #178197;
+	color: #FFFFFF;
+}
+
+.lang-choose.active {
+	display: block !important;
+	color: #FFFFFF !important;
+}
 </style>
 </head>
 
@@ -1902,5 +1922,32 @@ data-locale="zh-hk" class="nunito-sans">
 			slide_count = (slide_count + 1) % 3; // 循环回到0
 			showSlide(slide_count);
 		}, 2000);
+
+        const langBtn = document.getElementById('langBtn');
+		langBtn.addEventListener('click', function(e) {
+			e.stopPropagation(); // 阻止事件冒泡，防止立即被 document 隐藏
+			const popup = document.getElementById('langMenu')
+			if (popup.style.display === 'block') {
+				popup.style.display = 'none';
+			} else {
+				popup.style.display = 'block';
+			}
+		});
+
+		const langBtns = document.querySelectorAll(".lang-btn");
+		langBtns.forEach(btn => {
+			btn.onclick = function() {
+				document.getElementById('languageDisplay').innerHTML= this.value;
+				 document.querySelectorAll('.lang-choose').forEach(btn => {
+					btn.classList.remove("active");
+				 });
+				const choose = this.querySelector('.lang-choose');
+				choose.classList.add("active");
+			};
+		});
+		// 点击页面任意其他位置：隐藏 div
+		document.addEventListener('click', function() {
+			document.getElementById('langMenu').style.display = 'none';
+		});
 	</script>
 </body></html>
